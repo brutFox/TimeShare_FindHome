@@ -27,7 +27,7 @@ namespace TimeShare_FindHome
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM user"))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM address_tb"))
                 {
                     using (MySqlDataAdapter sda = new MySqlDataAdapter())
                     {
