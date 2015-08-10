@@ -197,7 +197,7 @@
     <Content Include="View\SignUp.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\UserData_Model.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="View\admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

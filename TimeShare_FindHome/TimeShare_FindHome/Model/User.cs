@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace TimeShare_FindHome.Model
 {
-    public class UserData_Model
+    public class User
     {
         public SqlCommand sqlconnection(string sql)
         {
