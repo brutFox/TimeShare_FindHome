@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TimeShare_FindHome
 {
-    public partial class signup : System.Web.UI.Page
+    public partial class SignUp : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
