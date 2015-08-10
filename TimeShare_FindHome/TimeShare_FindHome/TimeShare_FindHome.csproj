@@ -70,7 +70,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppData\timeshare.sql" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\login_less.css" />
     <Content Include="packages.config" />
+    <Content Include="View\Home.aspx" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -79,19 +84,52 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\timeshare.sql" />
-    <Content Include="Home.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="View\profile_buyer.aspx" />
+    <Content Include="View\profile_seller.aspx" />
+    <Content Include="View\signin.aspx" />
+    <Content Include="View\signup.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Home.aspx.cs">
+    <Compile Include="Model\UserData_Model.cs" />
+    <Compile Include="View\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
+    <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\profile_buyer.aspx.cs">
+      <DependentUpon>profile_buyer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\profile_buyer.aspx.designer.cs">
+      <DependentUpon>profile_buyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\profile_seller.aspx.cs">
+      <DependentUpon>profile_seller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\profile_seller.aspx.designer.cs">
+      <DependentUpon>profile_seller.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\signin.aspx.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\signin.aspx.designer.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
