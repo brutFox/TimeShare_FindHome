@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TimeShare_FindHome.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProfileSeller.aspx.cs" Inherits="TimeShare_FindHome.ProfileSeller" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        
     </div>
     </form>
 </body>
