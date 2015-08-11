@@ -19,7 +19,7 @@
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css"/>
 
     <title>
-        Realocation | Modern Real Estate Template
+        Timeshare | Home
     </title>
 </head>
 
@@ -274,7 +274,7 @@
             <div class="clearfix">
                 <div class="hex col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
                     <div class="hex-inner">
-                        <img src="assets/img/hex.png" alt="" class="hex-image">
+                        <img src="/Assets/img/hex.png" alt="" class="hex-image">
 
                         <div class="hex-content">
                             <i class="fa fa-group"></i>
@@ -295,7 +295,7 @@
             <div class="clearfix">
                 <div class="hex col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
                     <div class="hex-inner">
-                        <img src="assets/img/hex.png" alt="" class="hex-image">
+                        <img src="/Assets/img/hex.png" alt="" class="hex-image">
 
                         <div class="hex-content">
                             <i class="fa fa-search"></i>
@@ -316,7 +316,7 @@
             <div class="clearfix">
                 <div class="hex col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
                     <div class="hex-inner">
-                        <img src="assets/img/hex.png" alt="" class="hex-image">
+                        <img src="/Assets/img/hex.png" alt="" class="hex-image">
 
                         <div class="hex-content">
                             <i class="fa fa-compass"></i>

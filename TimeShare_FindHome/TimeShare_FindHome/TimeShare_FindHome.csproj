@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\database\timeshare.sql" />
-    <Content Include="Assets\bootstrap.min.css" />
     <Content Include="Assets\css\realocation.css" />
     <Content Include="Assets\css\variants\blue.css" />
     <Content Include="Assets\css\variants\brown.css" />
@@ -81,49 +80,92 @@
     <Content Include="Assets\css\variants\pink.css" />
     <Content Include="Assets\css\variants\purple.css" />
     <Content Include="Assets\css\variants\red.css" />
+    <Content Include="Assets\bootstrap.min.css" />
     <Content Include="Assets\img\hex.png" />
     <Content Include="Assets\img\map.png" />
     <Content Include="Assets\img\pattern-dots.png" />
+    <Content Include="Assets\img\patterns\large\cloth-alike%402x.png" />
+    <Content Include="Assets\img\patterns\large\cloth-alike-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\cloth-alike-dark.png" />
     <Content Include="Assets\img\patterns\large\cloth-alike.png" />
+    <Content Include="Assets\img\patterns\large\corrugation%402x.png" />
+    <Content Include="Assets\img\patterns\large\corrugation-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\corrugation-dark.png" />
     <Content Include="Assets\img\patterns\large\corrugation.png" />
+    <Content Include="Assets\img\patterns\large\diagonal-noise%402x.png" />
+    <Content Include="Assets\img\patterns\large\diagonal-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\diagonal-noise-dark.png" />
     <Content Include="Assets\img\patterns\large\diagonal-noise.png" />
+    <Content Include="Assets\img\patterns\large\dust%402x.png" />
+    <Content Include="Assets\img\patterns\large\dust-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\dust-dark.png" />
     <Content Include="Assets\img\patterns\large\dust.png" />
+    <Content Include="Assets\img\patterns\large\fabric-plaid%402x.png" />
+    <Content Include="Assets\img\patterns\large\fabric-plaid-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\fabric-plaid-dark.png" />
     <Content Include="Assets\img\patterns\large\fabric-plaid.png" />
+    <Content Include="Assets\img\patterns\large\farmer%402x.png" />
+    <Content Include="Assets\img\patterns\large\farmer-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\farmer-dark.png" />
     <Content Include="Assets\img\patterns\large\farmer.png" />
+    <Content Include="Assets\img\patterns\large\grid-noise%402x.png" />
+    <Content Include="Assets\img\patterns\large\grid-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\grid-noise-dark.png" />
     <Content Include="Assets\img\patterns\large\grid-noise.png" />
+    <Content Include="Assets\img\patterns\large\lghtmesh%402x.png" />
+    <Content Include="Assets\img\patterns\large\lghtmesh-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\lghtmesh-dark.png" />
     <Content Include="Assets\img\patterns\large\lghtmesh.png" />
+    <Content Include="Assets\img\patterns\large\lightpaperfibers%402x.png" />
+    <Content Include="Assets\img\patterns\large\lightpaperfibers-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\lightpaperfibers-dark.png" />
     <Content Include="Assets\img\patterns\large\lightpaperfibers.png" />
+    <Content Include="Assets\img\patterns\large\pw-maze-white%402x.png" />
+    <Content Include="Assets\img\patterns\large\pw-maze-white-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\pw-maze-white-dark.html" />
     <Content Include="Assets\img\patterns\large\pw-maze-white.png" />
+    <Content Include="Assets\img\patterns\large\retina-wood%402x.png" />
+    <Content Include="Assets\img\patterns\large\retina-wood-dark%402x.html" />
     <Content Include="Assets\img\patterns\large\retina-wood-dark.html" />
     <Content Include="Assets\img\patterns\large\retina-wood.png" />
+    <Content Include="Assets\img\patterns\small\cloth-alike%402x.png" />
+    <Content Include="Assets\img\patterns\small\cloth-alike-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\cloth-alike-dark.png" />
     <Content Include="Assets\img\patterns\small\cloth-alike.png" />
+    <Content Include="Assets\img\patterns\small\corrugation%402x.png" />
+    <Content Include="Assets\img\patterns\small\corrugation-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\corrugation-dark.png" />
     <Content Include="Assets\img\patterns\small\corrugation.png" />
+    <Content Include="Assets\img\patterns\small\diagonal-noise%402x.png" />
+    <Content Include="Assets\img\patterns\small\diagonal-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\diagonal-noise-dark.png" />
     <Content Include="Assets\img\patterns\small\diagonal-noise.png" />
+    <Content Include="Assets\img\patterns\small\dust%402x.png" />
+    <Content Include="Assets\img\patterns\small\dust-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\dust-dark.png" />
     <Content Include="Assets\img\patterns\small\dust.png" />
+    <Content Include="Assets\img\patterns\small\fabric-plaid%402x.png" />
+    <Content Include="Assets\img\patterns\small\fabric-plaid-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\fabric-plaid-dark.png" />
     <Content Include="Assets\img\patterns\small\fabric-plaid.png" />
+    <Content Include="Assets\img\patterns\small\farmer%402x.png" />
+    <Content Include="Assets\img\patterns\small\farmer-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\farmer-dark.png" />
     <Content Include="Assets\img\patterns\small\farmer.png" />
+    <Content Include="Assets\img\patterns\small\grid-noise%402x.png" />
+    <Content Include="Assets\img\patterns\small\grid-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\grid-noise-dark.png" />
     <Content Include="Assets\img\patterns\small\grid-noise.png" />
+    <Content Include="Assets\img\patterns\small\lghtmesh%402x.png" />
+    <Content Include="Assets\img\patterns\small\lghtmesh-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\lghtmesh-dark.png" />
     <Content Include="Assets\img\patterns\small\lghtmesh.png" />
+    <Content Include="Assets\img\patterns\small\no-pattern%402x.png" />
+    <Content Include="Assets\img\patterns\small\no-pattern-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\no-pattern-dark.png" />
     <Content Include="Assets\img\patterns\small\no-pattern.png" />
+    <Content Include="Assets\img\patterns\small\pw-maze-white%402x.png" />
+    <Content Include="Assets\img\patterns\small\pw-maze-white-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\pw-maze-white-dark.png" />
     <Content Include="Assets\img\patterns\small\pw-maze-white.png" />
     <Content Include="Assets\img\tmp\agents\medium\1.jpg" />
@@ -173,6 +215,8 @@
     <Content Include="Assets\libraries\font-awesome\css\font-awesome.css" />
     <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontba72.svg" />
     <Content Include="Assets\libraries\isotope\jquery.isotope.min.js" />
+    <Content Include="Assets\libraries\jquery-bxslider\images\bx_loader.gif" />
+    <Content Include="Assets\libraries\jquery-bxslider\images\controls.png" />
     <Content Include="Assets\libraries\jquery-bxslider\jquery.bxslider.css" />
     <Content Include="Assets\libraries\jquery-bxslider\jquery.bxslider.min.js" />
     <Content Include="Assets\login_less.css" />
@@ -183,6 +227,14 @@
     </Content>
     <Content Include="View\FrontEnd.Master" />
     <Content Include="View\admin\Admin.Master" />
+    <Content Include="Assets\libraries\flexslider\fonts\flexslider-icon.eot" />
+    <Content Include="Assets\libraries\flexslider\fonts\flexslider-icon.ttf" />
+    <Content Include="Assets\libraries\flexslider\fonts\flexslider-icon.woff" />
+    <Content Include="Assets\libraries\flexslider\fonts\flexslider-icond41d.eot" />
+    <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -197,6 +249,9 @@
     <Content Include="View\SignUp.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\District.cs" />
+    <Compile Include="Model\Upazilla.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="View\admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
