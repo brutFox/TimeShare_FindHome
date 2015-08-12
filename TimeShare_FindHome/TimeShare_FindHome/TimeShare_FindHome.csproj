@@ -84,88 +84,46 @@
     <Content Include="Assets\img\hex.png" />
     <Content Include="Assets\img\map.png" />
     <Content Include="Assets\img\pattern-dots.png" />
-    <Content Include="Assets\img\patterns\large\cloth-alike%402x.png" />
-    <Content Include="Assets\img\patterns\large\cloth-alike-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\cloth-alike-dark.png" />
     <Content Include="Assets\img\patterns\large\cloth-alike.png" />
-    <Content Include="Assets\img\patterns\large\corrugation%402x.png" />
-    <Content Include="Assets\img\patterns\large\corrugation-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\corrugation-dark.png" />
     <Content Include="Assets\img\patterns\large\corrugation.png" />
-    <Content Include="Assets\img\patterns\large\diagonal-noise%402x.png" />
-    <Content Include="Assets\img\patterns\large\diagonal-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\diagonal-noise-dark.png" />
     <Content Include="Assets\img\patterns\large\diagonal-noise.png" />
-    <Content Include="Assets\img\patterns\large\dust%402x.png" />
-    <Content Include="Assets\img\patterns\large\dust-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\dust-dark.png" />
     <Content Include="Assets\img\patterns\large\dust.png" />
-    <Content Include="Assets\img\patterns\large\fabric-plaid%402x.png" />
-    <Content Include="Assets\img\patterns\large\fabric-plaid-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\fabric-plaid-dark.png" />
     <Content Include="Assets\img\patterns\large\fabric-plaid.png" />
-    <Content Include="Assets\img\patterns\large\farmer%402x.png" />
-    <Content Include="Assets\img\patterns\large\farmer-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\farmer-dark.png" />
     <Content Include="Assets\img\patterns\large\farmer.png" />
-    <Content Include="Assets\img\patterns\large\grid-noise%402x.png" />
-    <Content Include="Assets\img\patterns\large\grid-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\grid-noise-dark.png" />
     <Content Include="Assets\img\patterns\large\grid-noise.png" />
-    <Content Include="Assets\img\patterns\large\lghtmesh%402x.png" />
-    <Content Include="Assets\img\patterns\large\lghtmesh-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\lghtmesh-dark.png" />
     <Content Include="Assets\img\patterns\large\lghtmesh.png" />
-    <Content Include="Assets\img\patterns\large\lightpaperfibers%402x.png" />
-    <Content Include="Assets\img\patterns\large\lightpaperfibers-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\lightpaperfibers-dark.png" />
     <Content Include="Assets\img\patterns\large\lightpaperfibers.png" />
-    <Content Include="Assets\img\patterns\large\pw-maze-white%402x.png" />
-    <Content Include="Assets\img\patterns\large\pw-maze-white-dark%402x.png" />
     <Content Include="Assets\img\patterns\large\pw-maze-white-dark.html" />
     <Content Include="Assets\img\patterns\large\pw-maze-white.png" />
-    <Content Include="Assets\img\patterns\large\retina-wood%402x.png" />
-    <Content Include="Assets\img\patterns\large\retina-wood-dark%402x.html" />
     <Content Include="Assets\img\patterns\large\retina-wood-dark.html" />
     <Content Include="Assets\img\patterns\large\retina-wood.png" />
-    <Content Include="Assets\img\patterns\small\cloth-alike%402x.png" />
-    <Content Include="Assets\img\patterns\small\cloth-alike-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\cloth-alike-dark.png" />
     <Content Include="Assets\img\patterns\small\cloth-alike.png" />
-    <Content Include="Assets\img\patterns\small\corrugation%402x.png" />
-    <Content Include="Assets\img\patterns\small\corrugation-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\corrugation-dark.png" />
     <Content Include="Assets\img\patterns\small\corrugation.png" />
-    <Content Include="Assets\img\patterns\small\diagonal-noise%402x.png" />
-    <Content Include="Assets\img\patterns\small\diagonal-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\diagonal-noise-dark.png" />
     <Content Include="Assets\img\patterns\small\diagonal-noise.png" />
-    <Content Include="Assets\img\patterns\small\dust%402x.png" />
-    <Content Include="Assets\img\patterns\small\dust-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\dust-dark.png" />
     <Content Include="Assets\img\patterns\small\dust.png" />
-    <Content Include="Assets\img\patterns\small\fabric-plaid%402x.png" />
-    <Content Include="Assets\img\patterns\small\fabric-plaid-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\fabric-plaid-dark.png" />
     <Content Include="Assets\img\patterns\small\fabric-plaid.png" />
-    <Content Include="Assets\img\patterns\small\farmer%402x.png" />
-    <Content Include="Assets\img\patterns\small\farmer-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\farmer-dark.png" />
     <Content Include="Assets\img\patterns\small\farmer.png" />
-    <Content Include="Assets\img\patterns\small\grid-noise%402x.png" />
-    <Content Include="Assets\img\patterns\small\grid-noise-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\grid-noise-dark.png" />
     <Content Include="Assets\img\patterns\small\grid-noise.png" />
-    <Content Include="Assets\img\patterns\small\lghtmesh%402x.png" />
-    <Content Include="Assets\img\patterns\small\lghtmesh-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\lghtmesh-dark.png" />
     <Content Include="Assets\img\patterns\small\lghtmesh.png" />
-    <Content Include="Assets\img\patterns\small\no-pattern%402x.png" />
-    <Content Include="Assets\img\patterns\small\no-pattern-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\no-pattern-dark.png" />
     <Content Include="Assets\img\patterns\small\no-pattern.png" />
-    <Content Include="Assets\img\patterns\small\pw-maze-white%402x.png" />
-    <Content Include="Assets\img\patterns\small\pw-maze-white-dark%402x.png" />
     <Content Include="Assets\img\patterns\small\pw-maze-white-dark.png" />
     <Content Include="Assets\img\patterns\small\pw-maze-white.png" />
     <Content Include="Assets\img\tmp\agents\medium\1.jpg" />
@@ -222,6 +180,7 @@
     <Content Include="Assets\login_less.css" />
     <Content Include="packages.config" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\HomeDetail.aspx" />
     <Content Include="View\HomeSearchResult.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -276,6 +235,13 @@
     </Compile>
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomeDetail.aspx.cs">
+      <DependentUpon>HomeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HomeDetail.aspx.designer.cs">
+      <DependentUpon>HomeDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\HomeSearchResult.aspx.cs">
       <DependentUpon>HomeSearchResult.aspx</DependentUpon>

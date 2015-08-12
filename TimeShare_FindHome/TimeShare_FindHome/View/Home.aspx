@@ -126,14 +126,14 @@
         <div class="property-box">
             <div class="property-box-inner">
                 <h3 class="property-box-title">
-                    <a href="property-detail.html">
+                    <a href="/View/HomeDetail.aspx?HomeId=<%=HomeFeatureInfo.GetInt32(0)%>">
                     <asp:Label ID="LabelName" runat="server" Text="">
 
                     </asp:Label>
                     </a>
                 </h3>
                 <h4 class="property-box-subtitle">
-                    <a href="property-detail.html">
+                    <a href="#">
                     <asp:Label ID="LabelUpazilla" runat="server" Text="">
 
                     </asp:Label>
