@@ -222,6 +222,7 @@
     <Content Include="Assets\login_less.css" />
     <Content Include="packages.config" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\HomeSearchResult.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -251,6 +252,8 @@
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\District.cs" />
+    <Compile Include="Model\Home.cs" />
+    <Compile Include="Model\HomeFeature.cs" />
     <Compile Include="Model\Upazilla.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="View\admin\Admin.Master.cs">
@@ -273,6 +276,13 @@
     </Compile>
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomeSearchResult.aspx.cs">
+      <DependentUpon>HomeSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HomeSearchResult.aspx.designer.cs">
+      <DependentUpon>HomeSearchResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ProfileBuyer.aspx.cs">
       <DependentUpon>ProfileBuyer.aspx</DependentUpon>

@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/View/FrontEnd.Master" CodeBehind="Home.aspx.cs" Inherits="TimeShare_FindHome.Home" %>
-
+<%@ Import Namespace="MySql.Data.MySqlClient" %>
+<%@ Import Namespace="TimeShare_FindHome.Model" %>
+<%@ Import Namespace="System.Configuration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HomePage" Runat="Server" >
 <div id="main-wrapper">
     <div id="main">
@@ -16,7 +18,6 @@
                     <div class="col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 map-navigation-positioning">
                         <div class="map-navigation-wrapper">
                             <div class="map-navigation">
-                                <form method="post" action="http://preview.byaviators.com/template/realocation/?" class="clearfix">
                                     <div class="form-group col-sm-12">
                                         <label>Country</label>
                                         <div class="select-wrapper">
@@ -48,7 +49,6 @@
                                     <div class="form-group col-sm-12">
                                         <asp:Button ID="Button1" runat="server" Text="Filter Properties" CssClass="btn btn-primary btn-inversed btn-block"></asp:Button>
                                     </div><!-- /.form-group -->
-                                </form>
                             </div><!-- /.map-navigation -->
                         </div><!-- /.map-navigation-wrapper -->
                     </div><!-- /.col-sm-3 -->
@@ -79,17 +79,75 @@
 
 <div class="properties-items">
 <div class="row">
+    <%
+        MySqlDataReader HomeFeatureInfo = ObjHomeFeature.ReturnHomeFeatureInfo();
+
+        if (HomeFeatureInfo.HasRows)
+        {
+            while (HomeFeatureInfo.Read())
+            {
+                this.LabelName.Text = HomeFeatureInfo.GetString(1).ToString();
+                this.LabelPrice.Text = ("$ " + HomeFeatureInfo.GetFloat(2)).ToString();
+                this.LabelBath.Text = HomeFeatureInfo.GetInt32(6).ToString();
+                this.LabelBed.Text = HomeFeatureInfo.GetInt32(7).ToString();
+                this.LabelArea.Text = HomeFeatureInfo.GetInt32(5).ToString();
+                this.LabelGarege.Text = HomeFeatureInfo.GetInt32(8).ToString();
+
+                ObjHomeFeature.address = HomeFeatureInfo.GetInt32(3);
+                MySqlDataReader AddressInfo = ObjAddress.ReturnAddressInfo(ObjHomeFeature);
+                if (AddressInfo.HasRows)
+                {
+                    while (AddressInfo.Read())
+                    {
+                        ObjAddress.district = AddressInfo.GetInt32(2);
+                        ObjAddress.upazilla = AddressInfo.GetInt32(3);
+
+                        MySqlDataReader DistrictInfo = ObjDistrict.ReturnDistrictInfo(ObjAddress);
+                        if (DistrictInfo.HasRows)
+                        {
+                            while (DistrictInfo.Read())
+                            {
+                                this.LabelDistrict.Text = DistrictInfo.GetString(1).ToString();
+                            }
+                        }
+
+                        MySqlDataReader UpazillaInfo = ObjUpazilla.ReturnUpazillaInfo(ObjAddress);
+                        if (UpazillaInfo.HasRows)
+                        {
+                            while (UpazillaInfo.Read())
+                            {
+                                this.LabelUpazilla.Text = (UpazillaInfo.GetString(1) + ",").ToString();
+                            }
+                        }
+                    }
+                }
+%>                
     <div class="property-item property-featured col-sm-6 col-md-3">
         <div class="property-box">
             <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">Culver Blvd</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Civic Betterment</a></h4>
+                <h3 class="property-box-title">
+                    <a href="property-detail.html">
+                    <asp:Label ID="LabelName" runat="server" Text="">
 
-                <div class="property-box-label property-box-label-primary">Rent</div>
-                <!-- /.property-box-label -->
+                    </asp:Label>
+                    </a>
+                </h3>
+                <h4 class="property-box-subtitle">
+                    <a href="property-detail.html">
+                    <asp:Label ID="LabelUpazilla" runat="server" Text="">
+
+                    </asp:Label>
+                        <asp:Label ID="LabelDistrict" runat="server" Text="">
+
+                        </asp:Label>
+                    </a>
+                </h4>
 
                 <div class="property-box-picture">
-                    <div class="property-box-price">$ 350 000</div>
+                    <div class="property-box-price">
+                        <asp:Label ID="LabelPrice" runat="server" Text="">
+                        </asp:Label>
+                    </div>
                     <!-- /.property-box-price -->
                     <div class="property-box-picture-inner">
                         <a href="property-detail.html" class="property-box-picture-target">
@@ -102,26 +160,42 @@
 
                 <div class="property-box-meta">
                     <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Baths</span>
+                        <strong>
+                            <asp:Label ID="LabelBath" runat="server" Text="">
+                            </asp:Label>
+                        </strong>
+                        <asp:Label ID="Label6" runat="server" Text="Baths">
+                        </asp:Label>
                     </div>
                     <!-- /.col-sm-3 -->
 
                     <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Beds</span>
+                        <strong>
+                            <asp:Label ID="LabelBed" runat="server" Text="">
+                            </asp:Label>
+                        </strong>
+                        <asp:Label ID="Label7" runat="server" Text="Beds">
+                        </asp:Label>
                     </div>
                     <!-- /.col-sm-3 -->
 
                     <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>271</strong>
-                        <span>Area</span>
+                        <strong>
+                            <asp:Label ID="LabelArea" runat="server" Text="">
+                            </asp:Label>
+                        </strong>
+                        <asp:Label ID="Label8" runat="server" Text="Area">
+                        </asp:Label>
                     </div>
                     <!-- /.col-sm-3 -->
 
                     <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Garages</span>
+                        <strong>
+                            <asp:Label ID="LabelGarege" runat="server" Text="">
+                            </asp:Label>
+                        </strong>
+                        <asp:Label ID="Label9" runat="server" Text="Gareges">
+                        </asp:Label>
                     </div>
                     <!-- /.col-sm-3 -->
                 </div>
@@ -131,379 +205,11 @@
         </div>
         <!-- /.property-box -->
     </div>
-    <!-- /.property-item -->
-
-    <div class="property-item property-rent col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">South St</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Palo Alto, SA</a></h4>
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 1900 / month</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/3.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>190</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
-
-    <div class="property-item property-sale col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">Hansbury Ave</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Kingman Park</a></h4>
-
-                <div class="property-box-label">Sale</div>
-                <!-- /.property-box-label -->
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 350 000</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/8.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>173</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
-
-    <div class="property-item property-rent col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">Evergreen Tr</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Silicon Valley, SA</a></h4>
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 299 000</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/10.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>233</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
-</div>
-<!-- /.row -->
-
-<div class="row">
-    <div class="property-item property-featured col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">Fife Ave</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Brooklyn</a></h4>
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 145 000</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/9.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>289</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
-
-    <div class="property-item property-sale col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">McLaugh Ave</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Manhattan</a></h4>
-
-                <div class="property-box-label property-box-label-primary">Rent</div>
-                <!-- /.property-box-label -->
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 545 000</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/11.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>3</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>198</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-sm-3">
-                        <strong>3</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
-
-    <div class="property-item property-rent col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">Everett Ave</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Silicon Valley, SA</a></h4>
-
-                <div class="property-box-label property-box-label-primary">Rent</div>
-                <!-- /.property-box-label -->
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 299 000</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/7.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>255</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
-
-    <div class="property-item property-sale col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title"><a href="property-detail.html">West Side</a></h3>
-                <h4 class="property-box-subtitle"><a href="property-detail.html">Kingman Park</a></h4>
-
-                <div class="property-box-label">Sale</div>
-                <!-- /.property-box-label -->
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">$ 430 000</div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/2.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Baths</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>1</strong>
-                        <span>Beds</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>241</strong>
-                        <span>Area</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>2</strong>
-                        <span>Garages</span>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->
+    <!-- /.property-item -->                
+<%                
+            }
+        }
+    %>
 </div>
 <!-- /.row -->
 </div>
@@ -888,4 +594,5 @@
         </div><!-- /.row -->
     </div><!-- /.block-content-inner -->
 </div><!-- /.block-content -->
+    </div>
 </asp:Content>

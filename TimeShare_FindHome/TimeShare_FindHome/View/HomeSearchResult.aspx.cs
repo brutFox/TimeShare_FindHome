@@ -1,26 +1,28 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Configuration;
-using MySql.Data.MySqlClient;
 using TimeShare_FindHome.Model;
 
-namespace TimeShare_FindHome
+namespace TimeShare_FindHome.View
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class HomeSearchResult : System.Web.UI.Page
     {
-        public Address ObjAddress = new Address();
+        public HomeFeature ObjHomeFeature = new HomeFeature();
         public District ObjDistrict = new District();
         public Upazilla ObjUpazilla = new Upazilla();
-        public Model.Home ObjHome = new Model.Home();
-        public HomeFeature ObjHomeFeature = new HomeFeature();
+        public Address ObjAddress = new Address();
+
+        public int AddressId2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            AddressId2 = int.Parse(Request.QueryString["AddressId"]);
+
             if (IsPostBack)
             {
                 int DistrictId;
@@ -30,7 +32,7 @@ namespace TimeShare_FindHome
                 DistrictId = this.GetDistrictId();
                 UpazillaId = this.GetUpazillaId(DistrictId);
                 AddressId = this.GetAddressId(DistrictId, UpazillaId);
-                Response.Redirect("~/View/HomeSearchResult.aspx?AddressId=" + AddressId +"");
+                Response.Redirect("~/View/HomeSearchResult.aspx?AddressId=" + AddressId + "");
 
             }
         }
@@ -92,22 +94,24 @@ namespace TimeShare_FindHome
             return AddressId;
         }
 
-        //public void GetHomeFeatureInfo()
+        //public void GetHomeFeatureInfoByAddress(int AddressId)
         //{
-        //    MySqlDataReader HomeFeatureInfo = ObjHomeFeature.ReturnHomeFeatureInfo();
+        //    ObjHomeFeature.address = AddressId;
+
+        //    MySqlDataReader HomeFeatureInfo = ObjHomeFeature.ReturnHomeFeatureInfoByAddress(ObjHomeFeature);
 
         //    if (HomeFeatureInfo.HasRows)
         //    {
         //        while (HomeFeatureInfo.Read())
         //        {
-        //            this.LabelName.Text = HomeFeatureInfo.GetString(1).ToString();
-        //            this.LabelPrice.Text = ("$ " + HomeFeatureInfo.GetFloat(2)).ToString();
         //            this.LabelBath.Text = HomeFeatureInfo.GetInt32(6).ToString();
         //            this.LabelBed.Text = HomeFeatureInfo.GetInt32(7).ToString();
         //            this.LabelArea.Text = HomeFeatureInfo.GetInt32(5).ToString();
         //            this.LabelGarege.Text = HomeFeatureInfo.GetInt32(8).ToString();
+        //            this.LabelPrice.Text = ("$ " + HomeFeatureInfo.GetFloat(2)).ToString();
+        //            this.LabelName.Text = HomeFeatureInfo.GetString(1).ToString();
+        //            this.LabelDescription.Text = HomeFeatureInfo.GetString(9).ToString();
 
-        //            ObjHomeFeature.address = HomeFeatureInfo.GetInt32(3);
         //            MySqlDataReader AddressInfo = ObjAddress.ReturnAddressInfo(ObjHomeFeature);
         //            if (AddressInfo.HasRows)
         //            {

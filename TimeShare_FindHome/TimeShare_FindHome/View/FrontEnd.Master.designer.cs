@@ -31,12 +31,12 @@ namespace TimeShare_FindHome.View {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HomePage;
         
         /// <summary>
-        /// SignUpPage control.
+        /// HomeSearchPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder SignUpPage;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomeSearchPage;
     }
 }
