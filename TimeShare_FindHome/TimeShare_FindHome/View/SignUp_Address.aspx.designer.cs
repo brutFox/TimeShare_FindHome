@@ -7,63 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeShare_FindHome {
+namespace TimeShare_FindHome.View {
     
     
-    public partial class SignUp {
+    public partial class SignUp_Address {
         
         /// <summary>
-        /// reg_email control.
+        /// country_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_email;
+        protected global::System.Web.UI.WebControls.DropDownList country_selection;
         
         /// <summary>
-        /// reg_name control.
+        /// district_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_name;
+        protected global::System.Web.UI.WebControls.DropDownList district_selection;
         
         /// <summary>
-        /// reg_pass control.
+        /// area_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_pass;
+        protected global::System.Web.UI.WebControls.DropDownList area_selection;
         
         /// <summary>
-        /// reg_conf_pass control.
+        /// Register_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_conf_pass;
-        
-        /// <summary>
-        /// usertype_selection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList usertype_selection;
-        
-        /// <summary>
-        /// basic_to_usertype control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button basic_to_usertype;
+        protected global::System.Web.UI.WebControls.Button Register_btn;
     }
 }

@@ -183,6 +183,10 @@
     <Content Include="View\HomeDetail.aspx" />
     <Content Include="View\HomeSearchResult.aspx" />
     <Content Include="View\SignIn.aspx" />
+    <Content Include="View\SignUp_Address.aspx" />
+    <Content Include="View\SignUp_Agent.aspx" />
+    <Content Include="View\SignUp_Buyer.aspx" />
+    <Content Include="View\SignUp_Developer.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -215,6 +219,7 @@
     <Compile Include="Model\HomeFeature.cs" />
     <Compile Include="Model\Upazilla.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserRegistration.cs" />
     <Compile Include="View\admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,6 +283,31 @@
     </Compile>
     <Compile Include="View\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Address.aspx.cs">
+      <DependentUpon>SignUp_Address.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\SignUp_Address.aspx.designer.cs">
+      <DependentUpon>SignUp_Address.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Agent.aspx.cs">
+      <DependentUpon>SignUp_Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Agent.aspx.designer.cs">
+      <DependentUpon>SignUp_Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Buyer.aspx.cs">
+      <DependentUpon>SignUp_Buyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Buyer.aspx.designer.cs">
+      <DependentUpon>SignUp_Buyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Developer.aspx.cs">
+      <DependentUpon>SignUp_Developer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUp_Developer.aspx.designer.cs">
+      <DependentUpon>SignUp_Developer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
