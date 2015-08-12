@@ -223,6 +223,7 @@
     <Content Include="packages.config" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\HomeSearchResult.aspx" />
+    <Content Include="View\SignIn.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -246,7 +247,6 @@
   <ItemGroup>
     <Content Include="View\ProfileBuyer.aspx" />
     <Content Include="View\ProfileSeller.aspx" />
-    <Content Include="View\SignIn.aspx" />
     <Content Include="View\SignUp.aspx" />
   </ItemGroup>
   <ItemGroup>
