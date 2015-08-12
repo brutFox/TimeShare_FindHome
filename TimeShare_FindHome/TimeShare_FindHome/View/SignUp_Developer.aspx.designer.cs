@@ -10,33 +10,42 @@
 namespace TimeShare_FindHome.View {
     
     
-    public partial class SignIn {
+    public partial class SignUp_Developer {
         
         /// <summary>
-        /// email control.
+        /// reg_company_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox reg_company_name;
         
         /// <summary>
-        /// password control.
+        /// reg_company_license control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.WebControls.TextBox reg_company_license;
         
         /// <summary>
-        /// sign_in_btn control.
+        /// reg_chairman control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sign_in_btn;
+        protected global::System.Web.UI.WebControls.TextBox reg_chairman;
+        
+        /// <summary>
+        /// developer_to_address control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button developer_to_address;
     }
 }

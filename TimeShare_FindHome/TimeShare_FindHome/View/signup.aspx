@@ -1,20 +1,74 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/View/FrontEnd.Master" CodeBehind="SignUp.aspx.cs" Inherits="TimeShare_FindHome.SignUp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="TimeShare_FindHome.SignUp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="SignUpPage" Runat="Server" >
-<div id="main-wrapper">
-    <div id="main">
-        <div id="main-inner">
-            
-            <script type="text/javascript" src="/Assets/js/jquery.js"></script>
-            <style>
-.hidden {
-    visibility: hidden;
-    over-flow: hidden;
-    width: 0px;
-    height: 0px;
-}
-</style>
-            
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" type="text/css" href="~/Assets/libraries/font-awesome/css/font-awesome.css" media="screen, projection"/>
+    <link rel="stylesheet" type="text/css" href="~/Assets/libraries/jquery-bxslider/jquery.bxslider.css" media="screen, projection"/>
+    <link rel="stylesheet" type="text/css" href="~/Assets/libraries/flexslider/flexslider.css" media="screen, projection"/>
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/realocation.css" media="screen, projection"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css"/>
+
+
+    <title>
+        Timeshare | SignUp
+    </title>
+</head>
+
+<body>
+
+<div id="wrapper">
+    <div id="header-wrapper">
+        <div id="header">
+    <div id="header-inner">
+        <div class="header-bar">
+            <div class="container">
+                <div class="header-infobox">
+                    <strong>E-mail:</strong> <a href="#">Contact@timeshare.com</a>
+                </div><!-- /.header-infobox-->
+
+                <div class="header-infobox">
+                    <strong>Phone:</strong> 800-123-4567
+                </div><!-- /.header-infobox-->
+
+                <ul class="header-bar-nav nav nav-register">
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Sign Up</a></li>
+</ul>            </div><!-- /.container -->
+        </div><!-- /.header-bar -->
+
+        <div class="header-top">
+            <div class="container">
+                <div class="header-identity">
+                    <a href="index-2.html" class="header-identity-target">
+                        <span class="header-icon"><i class="fa fa-home"></i></span>
+                        <span class="header-title">TimeShare</span><!-- /.header-title -->
+                        <span class="header-slogan">Real Estate &amp; Rental Bussiness Website</span><!-- /.header-slogan -->
+                    </a><!-- /.header-identity-target-->
+                </div><!-- /.header-identity -->
+
+                <div class="header-actions pull-right">
+                    <a href="submit-property.html" class="btn btn-primary"><i class="fa fa-plus"></i>Sign up</a>
+                </div><!-- /.header-actions -->
+
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".header-navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div><!-- /.container -->
+        </div><!-- .header-top -->
+    </div><!-- /.header-inner -->
 </div><!-- /#header -->    </div><!-- /#header-wrapper -->
     <div id="main-wrapper">
         <div id="main">
@@ -24,134 +78,60 @@
                         <div class="block-content-inner">
                             <div class="row">
                                 <div class="col-sm-4 col-sm-offset-4">
-                                    <h2 class="center">Register</h2>
+                                    <h2 class="center">SignUp</h2>
 
-                                    <div class="box">
-                                        <form method="post" action="http://preview.byaviators.com/template/realocation/register.html?">
-                                            <div class="form-group" id="basic_user_info">
-                                            <div class="form-group">
-                                                <label>E-mail</label>
-                                                <input type="email" class="form-control">
-                                            </div><!-- /.form-group -->
 
-                                            <div class="form-group">
-                                                <label>Name</label>
-                                                <input type="text" class="form-control">
-                                            </div><!-- /.form-group -->
+                                     <div class="box">
+                                        <form Runat="Server">
                                             
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <input type="password" class="form-control">
-                                            </div><!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <label>Confirm Password</label>
-                                                <input type="password" class="form-control">
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
-                                                <select class="form-control" id="usertype_selection">
-                                                  <option value="">Select User Type</option>
-                                                  <option value="Buyer" id="buyer_selected">Buyer</option>
-                                                  <option value="Developer" id="dev_selected">Developer</option>
-                                                </select>
-                                                 
-                                            </div><!-- /.form-group -->
-
-                                            <div class="form-group">
-                                                <input type="button" value="Next" class="btn btn-primary btn-inversed btn-block" id="basic_to_usertype">
-                                            </div>
-                                            </div>
-
-                                            <div class="form-group hidden" id="buyer_info">
                                                 <div class="form-group">
-                                                    <label>Occupation</label>
-                                                    <input type="text" class="form-control">
-                                                </div><!-- /.form-group -->
-                                                <div class="form-group">
-                                                    <label>Approx. Yearly Income</label>
-                                                    <input type="Text" class="form-control">
-                                                </div><!-- /.form-group -->
-                                                <div class="form-group">
-                                                <select class="form-control">
-                                                  <option value="">Latest Educational Qualification</option>
-                                                  <option value="N/A">N/A</option>
-                                                  <option value="PhD">PhD</option>
-                                                  <option value="Post Graduate">Post Graduate</option>
-                                                  <option value="Graduate">Graduate</option>
-                                                  <option value="HSC">HSC</option>
-                                                  <option value="SSC">SSC</option>
-                                                </select>
-                                                    </div>
-                                                <div class="form-group">
-                                                <select class="form-control">
-                                                  <option value="">Marital Status</option>
-                                                  <option value="Married">Married</option>
-                                                  <option value="Bachelor">Bachelor</option>
-                                                  <option value="Widow/Widower">Widow/Widower</option>
-                                                  <option value="Divorced">Divorced</option>
-                                                 </select>
-                                                    </div>
-
-                                                 <div class="form-group">
-                                                    <label>No. of family members</label>
-                                                    <input type="Text" class="form-control">
-                                                </div><!-- /.form-group -->
-
-                                                <div class="form-group">
-                                                <input type="button" value="Next" class="btn btn-primary btn-inversed btn-block" id="buyer_to_address">
-                                            </div>
-                                            </div>
-
-                                            <div class="form-group hidden" id="developer_info">
-                                                <div class="form-group">
-                                                    <label>Company Name</label>
-                                                    <input type="Text" class="form-control">
-                                                </div><!-- /.form-group -->
-                                                <div class="form-group">
-                                                    <label>License No.</label>
-                                                    <input type="Text" class="form-control">
-                                                </div><!-- /.form-group -->
-                                                <div class="form-group">
-                                                    <label>Chairman</label>
-                                                    <input type="Text" class="form-control">
-                                                </div><!-- /.form-group -->
-
-                                                <div class="form-group">
-                                                    <input type="button" value="Next" class="btn btn-primary btn-inversed btn-block" id="developer_to_address">
+                                                    <label>E-mail</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_email"></asp:TextBox>
                                                 </div>
-                                            </div>
-
-                                            <div class="form-group hidden" id="address_info">
-                                                <div class="form-group">
-                                                    <select class="form-control">
-                                                        <option value="">Select Country</option>
-                                                        <option value="Bangladesh">Bangladesh</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <select class="form-control">
-                                                        <option value="">Select District</option>
-                                                        <option value="Dhaka">Dhaka</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <select class="form-control">
-                                                        <option value="">Select Area/Upazilla</option>
-                                                        <option value="Mirpur">Mirpur</option>
-                                                        <option value="Banani">Banani</option>
-                                                        <option value="Gulshan">Gulshan</option>
-                                                        <option value="Dhanmondi">Dhanmondi</option>
-                                                    </select>
-                                                </div>
+                                                <!-- /.form-group -->
 
                                                 <div class="form-group">
-                                                <input type="submit" value="Register" class="btn btn-primary btn-inversed btn-block">
-                                            </div><!-- /.form-group -->
+                                                    <label>Name</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_name"></asp:TextBox>
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_pass" TextMode="Password"></asp:TextBox>
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <label>Confirm Password</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_conf_pass" TextMode="Password"></asp:TextBox>
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <asp:DropDownList CssClass="form-control" runat="server" ID="usertype_selection">
+                                                        <asp:ListItem Value="">
+                                                        Select User Type
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Buyer">
+                                                        Buyer
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Developer">
+                                                        Developer
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Agent">
+                                                        Agent
+                                                        </asp:ListItem>
+                                                    </asp:DropDownList>
+
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                            <div class="form-group">
+                                                <asp:Button ID="basic_to_usertype" runat="server" Text="Next" CssClass="btn btn-primary btn-inversed btn-block" OnClick="basic_to_usertype_Click"></asp:Button>
                                             </div>
-                                            
-                                            
-                                           
+                                            <!-- /.form-group -->
+
                                         </form>
                                     </div><!-- /.box -->
                                 </div>
@@ -219,45 +199,67 @@
 </script>
             
             
-<script>
+<script type="text/javascript">
+
     $("#basic_to_usertype").click(function (e) {
-        if (document.getElementById("usertype_selection").value == "Buyer") {
+        if (user_type == "Buyer") {
+            $("#Register_btn").addClass('hidden');
             $("#basic_user_info").addClass('hidden');
             $("#address_info").addClass('hidden');
             $("#developer_info").addClass('hidden');
+            $("#agent_info").addClass('hidden');
             $("#buyer_info").removeClass('hidden');
         }
     });
     $("#basic_to_usertype").click(function (e) {
         if (document.getElementById("usertype_selection").value == "Developer") {
-
+            $("#Register_btn").addClass('hidden');
             $("#basic_user_info").addClass('hidden');
             $("#address_info").addClass('hidden');
             $("#buyer_info").addClass('hidden');
+            $("#agent_info").addClass('hidden');
             $("#developer_info").removeClass('hidden');
+
         }
     });
+    $("#basic_to_usertype").click(function (e) {
+        if (document.getElementById("usertype_selection").value == "Agent") {
+            $("#Register_btn").addClass('hidden');
+            $("#basic_user_info").addClass('hidden');
+            $("#address_info").addClass('hidden');
+            $("#buyer_info").addClass('hidden');
+            $("#developer_info").addClass('hidden');
+            $("#agent_info").removeClass('hidden');
+
+        }
+    });
+
     $("#buyer_to_address").click(function (e) {
+        $("#agent_info").addClass('hidden');
         $("#basic_user_info").addClass('hidden');
         $("#developer_info").addClass('hidden');
         $("#buyer_info").addClass('hidden');
         $("#address_info").removeClass('hidden');
+        $("#Register_btn").removeClass('hidden');
     });
     $("#developer_to_address").click(function (e) {
+        $("#agent_info").addClass('hidden');
+        $("#basic_user_info").addClass('hidden');
+        $("#developer_info").addClass('hidden');
+        $("#buyer_info").addClass('hidden');
+        $("#address_info").removeClass('hidden'); 
+        $("#Register_btn").removeClass('hidden');
+    });
+    
+    $("#agent_to_address").click(function (e) {
+        $("#agent_info").addClass('hidden');
         $("#basic_user_info").addClass('hidden');
         $("#developer_info").addClass('hidden');
         $("#buyer_info").addClass('hidden');
         $("#address_info").removeClass('hidden');
+        $("#Register_btn").removeClass('hidden');
     });
 </script>            
-            
-            
-            
-            
-            
-            
-            
-            
             
 
  </asp:Content>

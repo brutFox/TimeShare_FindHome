@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="TimeShare_FindHome.View.SignIn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp_Buyer.aspx.cs" Inherits="TimeShare_FindHome.View.signup_buyer" %>
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
 
 
     <title>
-        Timeshare | Signin
+        Timeshare | SignUp
     </title>
 </head>
 
@@ -78,27 +78,92 @@
                         <div class="block-content-inner">
                             <div class="row">
                                 <div class="col-sm-4 col-sm-offset-4">
-                                    <h2 class="center">Login</h2>
+                                    <h2 class="center">SignUp</h2>
 
-                                    <div class="box">
+
+                                     <div class="box">
                                         <form Runat="Server">
-                                            <div class="form-group">
-                                                <label>Login</label>
-                                                <asp:TextBox ID="email" runat="server" CssClass="form-control">
-                                                </asp:TextBox>
-                                            </div><!-- /.form-group -->
 
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                                            </div><!-- /.form-group -->
+                                            <div class="form-group" id="buyer_info">
+                                                <div class="form-group">
+                                                    <label>Occupation</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_occupation"></asp:TextBox>
+                                                </div><!-- /.form-group -->
+                                                <div class="form-group">
+                                                    <label>Approx. Yearly Income</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_income"></asp:TextBox>
+                                                </div><!-- /.form-group -->
+                                                <div class="form-group">
+                                                <asp:DropDownList CssClass="form-control" runat="server" ID="select_education">
+                                                    <asp:ListItem Value="">
+                                                        Latest Educational Qualification
+                                                        </asp:ListItem>
+                                                    <asp:ListItem Value="N/A">
+                                                        N/A
+                                                        </asp:ListItem>
+                                                    <asp:ListItem Value="PhD">
+                                                        PhD
+                                                        </asp:ListItem>
+                                                    <asp:ListItem Value="Post Graduate">
+                                                        Post Graduate
+                                                        </asp:ListItem>
+                                                    <asp:ListItem Value="Graduate">
+                                                        Graduate
+                                                        </asp:ListItem>
+                                                    <asp:ListItem Value="HSC">
+                                                        HSC
+                                                        </asp:ListItem>
+                                                    <asp:ListItem Value="SSC">
+                                                        SSC
+                                                        </asp:ListItem>
+                                                </asp:DropDownList>
+                                                  
+                                                    </div>
+                                                <div class="form-group">
+                                                    <asp:DropDownList CssClass="form-control" runat="server" ID="marital_selection">
+                                                    <asp:ListItem Value="">
+                                                        Marital Status
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Married">
+                                                        Married
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Bachelor">
+                                                        Bachelor
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Widow/Widower">
+                                                        Widow/Widower
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Divorced">
+                                                        Divorced
+                                                        </asp:ListItem>
 
+                                                        </asp:DropDownList>
+                                                
+                                                </div>
+
+                                                 <div class="form-group">
+                                                    <label>No. of family members</label>
+                                                     <asp:TextBox runat="server" CssClass="form-control" ID="reg_family_mem"></asp:TextBox>
+                                                    
+                                                </div><!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <label>National ID Card No.</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_nid"></asp:TextBox>
+                                                    
+                                                </div><!-- /.form-group -->
+
+                                                
+                                            </div>
                                             <div class="form-group">
-                                                <asp:Button ID="sign_in_btn" runat="server" Text="Login" CssClass="btn btn-primary btn-inversed btn-block" OnClick="sign_in_btn_Click"></asp:Button>
-                                            </div><!-- /.form-group -->
+                                                    <asp:Button ID="buyer_to_address" runat="server" value="Next"  Text="Next" CssClass="btn btn-primary btn-inversed btn-block" OnClick="buyer_to_address_Click"></asp:Button>
+                                             </div><!-- /.form-group -->
+
                                         </form>
                                     </div><!-- /.box -->
-                                </div>
+
+
+                                    </div>
                             </div><!-- /.row -->
                         </div><!-- /.block-content-inner -->
                     </div><!-- /.block-content -->

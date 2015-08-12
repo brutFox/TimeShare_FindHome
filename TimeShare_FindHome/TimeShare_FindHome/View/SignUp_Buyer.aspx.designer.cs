@@ -7,63 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeShare_FindHome {
+namespace TimeShare_FindHome.View {
     
     
-    public partial class SignUp {
+    public partial class signup_buyer {
         
         /// <summary>
-        /// reg_email control.
+        /// reg_occupation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_email;
+        protected global::System.Web.UI.WebControls.TextBox reg_occupation;
         
         /// <summary>
-        /// reg_name control.
+        /// reg_income control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_name;
+        protected global::System.Web.UI.WebControls.TextBox reg_income;
         
         /// <summary>
-        /// reg_pass control.
+        /// select_education control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_pass;
+        protected global::System.Web.UI.WebControls.DropDownList select_education;
         
         /// <summary>
-        /// reg_conf_pass control.
+        /// marital_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_conf_pass;
+        protected global::System.Web.UI.WebControls.DropDownList marital_selection;
         
         /// <summary>
-        /// usertype_selection control.
+        /// reg_family_mem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList usertype_selection;
+        protected global::System.Web.UI.WebControls.TextBox reg_family_mem;
         
         /// <summary>
-        /// basic_to_usertype control.
+        /// reg_nid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button basic_to_usertype;
+        protected global::System.Web.UI.WebControls.TextBox reg_nid;
+        
+        /// <summary>
+        /// buyer_to_address control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buyer_to_address;
     }
 }

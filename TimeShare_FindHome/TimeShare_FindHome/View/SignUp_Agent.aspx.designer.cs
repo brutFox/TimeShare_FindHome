@@ -10,33 +10,24 @@
 namespace TimeShare_FindHome.View {
     
     
-    public partial class SignIn {
+    public partial class SignUp_Agent {
         
         /// <summary>
-        /// email control.
+        /// reg_agent_license control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox reg_agent_license;
         
         /// <summary>
-        /// password control.
+        /// agent_to_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-        
-        /// <summary>
-        /// sign_in_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sign_in_btn;
+        protected global::System.Web.UI.WebControls.Button agent_to_address;
     }
 }
