@@ -25,5 +25,18 @@ namespace TimeShare_FindHome.Model
 
             return Reader;
         }
+
+        public MySqlDataReader ReturnDistrictInfo(Address Obj)
+        {
+            string Query = "SELECT * FROM district WHERE d_id = '" + Obj.district + "'";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            return Reader;
+        }
     }
 }
