@@ -20,19 +20,20 @@ namespace TimeShare_FindHome
                 check_my_sql_conn();
             }
         }
-        private void check_my_sql_conn()
+        public void check_my_sql_conn()
         {
             //connection string
             string conn = ConfigurationManager.ConnectionStrings["MySQLConnStr"].ConnectionString;
 
             using (MySqlConnection con = new MySqlConnection(conn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM user"))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM address"))
                 {
                     using (MySqlDataAdapter sda = new MySqlDataAdapter())
                     {
                         cmd.Connection = con;
                         sda.SelectCommand = cmd;
+
                         using (DataTable dt = new DataTable())
                         {
                             sda.Fill(dt);
