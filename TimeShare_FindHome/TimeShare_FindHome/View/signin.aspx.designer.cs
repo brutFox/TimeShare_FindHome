@@ -10,7 +10,7 @@
 namespace TimeShare_FindHome {
     
     
-    public partial class signin {
+    public partial class SignIn {
         
         /// <summary>
         /// form1 control.

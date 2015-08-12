@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Controller/signin_Controller.cs" Inherits="TimeShare_FindHome.signin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Controller/SignIn.aspx.cs" Inherits="TimeShare_FindHome.SignIn" %>
 
 <!DOCTYPE html>
 
