@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System;
 namespace TimeShare_FindHome.Model
 {
     public class UserRegistration
@@ -33,7 +34,7 @@ namespace TimeShare_FindHome.Model
             MySqlConnection Connection = new MySqlConnection(ConnectionString);
             MySqlCommand Command = new MySqlCommand(Query, Connection);
             Connection.Open();
-
+            
 
             MySqlDataReader Reader = Command.ExecuteReader();
 

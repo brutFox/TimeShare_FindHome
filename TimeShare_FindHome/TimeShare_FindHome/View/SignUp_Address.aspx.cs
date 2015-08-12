@@ -28,7 +28,7 @@ namespace TimeShare_FindHome.View
 
             
 
-            Response.Redirect("~/View/WebForm1.aspx");
+            
 
         }
     }
