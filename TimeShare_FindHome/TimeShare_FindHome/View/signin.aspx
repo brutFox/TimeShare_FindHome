@@ -87,11 +87,28 @@
                                                 <asp:TextBox ID="username" runat="server" CssClass="form-control">
                                                 </asp:TextBox>
                                             </div><!-- /.form-group -->
-
+                                            
                                             <div class="form-group">
                                                 <label>Password</label>
                                                 <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                             </div><!-- /.form-group -->
+
+                                            <div class="form-group">
+                                                <label>Type</label>
+                                                <div class="select-wrapper">
+                                                <asp:DropDownList ID="DropDownListType" runat="server" CssClass="form-control">
+                                                    <asp:ListItem Value="">
+                                                        Select Type
+                                                    </asp:ListItem>
+                                                    <asp:ListItem Value="0">
+                                                        Buyer
+                                                    </asp:ListItem>
+                                                    <asp:ListItem Value="1">
+                                                        Developer
+                                                    </asp:ListItem>
+                                                </asp:DropDownList>
+                                                </div><!-- /.select-wrapper -->
+                                            </div>
 
                                             <div class="form-group">
                                                 <asp:Button ID="sign_in_btn" runat="server" Text="Login" CssClass="btn btn-primary btn-inversed btn-block" OnClick="sign_in_btn_Click"></asp:Button>

@@ -24,5 +24,30 @@ namespace TimeShare_FindHome.Model
 
             return Reader;
         }
+
+        public MySqlDataReader CheckType(int type, int u_id)
+        {
+            string Query = "SELECT * FROM buyer WHERE u_id = '" + u_id + "' ";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            return Reader;
+        }
+        public MySqlDataReader CheckDeveloper(int type, int u_id)
+        {
+            string Query = "SELECT * FROM developer WHERE seller_id = (SELECT s_id FROM seller WHERE u_id = '" + u_id + "')";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            return Reader;
+        }
     }
 }
