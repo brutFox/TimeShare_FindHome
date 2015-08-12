@@ -266,6 +266,9 @@
         <asp:ContentPlaceHolder ID="HomePage" runat="server">
         
         </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="SignUpPage" runat="server">
+        
+        </asp:ContentPlaceHolder>
     </div>
     </form>
 <div class="block-content fullwidth background-primary background-map clearfix">
