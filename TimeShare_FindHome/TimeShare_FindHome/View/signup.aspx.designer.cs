@@ -13,6 +13,15 @@ namespace TimeShare_FindHome {
     public partial class SignUp {
         
         /// <summary>
+        /// reg_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox reg_name;
+        
+        /// <summary>
         /// reg_email control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace TimeShare_FindHome {
         protected global::System.Web.UI.WebControls.TextBox reg_email;
         
         /// <summary>
-        /// reg_name control.
+        /// user_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reg_name;
+        protected global::System.Web.UI.WebControls.TextBox user_name;
         
         /// <summary>
         /// reg_pass control.

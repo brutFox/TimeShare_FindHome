@@ -41,8 +41,8 @@
                 </div><!-- /.header-infobox-->
 
                 <ul class="header-bar-nav nav nav-register">
-    <li><a href="login.html">Login</a></li>
-    <li><a href="register.html">Sign Up</a></li>
+    <li><a href="~/View/SignIn.aspx">Login</a></li>
+    <li><a href="~/View/SignUp.aspx">Sign Up</a></li>
 </ul>            </div><!-- /.container -->
         </div><!-- /.header-bar -->
 
@@ -57,7 +57,7 @@
                 </div><!-- /.header-identity -->
 
                 <div class="header-actions pull-right">
-                    <a href="submit-property.html" class="btn btn-primary"><i class="fa fa-plus"></i>Sign up</a>
+                    <a href="~/View/SignIn.aspx" class="btn btn-primary"><i class="fa fa-plus"></i>Sign In</a>
                 </div><!-- /.header-actions -->
 
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".header-navigation">
@@ -85,14 +85,20 @@
                                         <form Runat="Server">
                                             
                                                 <div class="form-group">
+                                                    <label>Name</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_name"></asp:TextBox>
+                                                </div>
+                                                <!-- /.form-group -->
+                                            
+                                                <div class="form-group">
                                                     <label>E-mail</label>
                                                     <asp:TextBox runat="server" CssClass="form-control" ID="reg_email"></asp:TextBox>
                                                 </div>
                                                 <!-- /.form-group -->
-
+                                            
                                                 <div class="form-group">
-                                                    <label>Name</label>
-                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_name"></asp:TextBox>
+                                                    <label>Uaer Name</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="user_name"></asp:TextBox>
                                                 </div>
                                                 <!-- /.form-group -->
 
