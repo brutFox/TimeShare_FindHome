@@ -293,18 +293,21 @@
     </Compile>
     <Compile Include="View\SignUp_Agent.aspx.cs">
       <DependentUpon>SignUp_Agent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\SignUp_Agent.aspx.designer.cs">
       <DependentUpon>SignUp_Agent.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\SignUp_Buyer.aspx.cs">
       <DependentUpon>SignUp_Buyer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\SignUp_Buyer.aspx.designer.cs">
       <DependentUpon>SignUp_Buyer.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\SignUp_Developer.aspx.cs">
       <DependentUpon>SignUp_Developer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\SignUp_Developer.aspx.designer.cs">
       <DependentUpon>SignUp_Developer.aspx</DependentUpon>

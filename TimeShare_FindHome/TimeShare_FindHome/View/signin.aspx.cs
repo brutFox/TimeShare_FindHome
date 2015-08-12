@@ -59,6 +59,10 @@ namespace TimeShare_FindHome.View
                         Response.Redirect("~/View/SignUp.aspx");
                     }
                 }
+                else
+                {
+                    Response.Redirect("~/View/SignIn.aspx");
+                }
                 
             }
             else
