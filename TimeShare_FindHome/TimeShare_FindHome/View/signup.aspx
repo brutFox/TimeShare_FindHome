@@ -5,7 +5,15 @@
     <div id="main">
         <div id="main-inner">
             
-            
+            <script type="text/javascript" src="/Assets/js/jquery.js"></script>
+            <style>
+.hidden {
+    visibility: hidden;
+    over-flow: hidden;
+    width: 0px;
+    height: 0px;
+}
+</style>
             
 </div><!-- /#header -->    </div><!-- /#header-wrapper -->
     <div id="main-wrapper">
@@ -20,6 +28,7 @@
 
                                     <div class="box">
                                         <form method="post" action="http://preview.byaviators.com/template/realocation/register.html?">
+                                            <div class="form-group" id="basic_user_info">
                                             <div class="form-group">
                                                 <label>E-mail</label>
                                                 <input type="email" class="form-control">
@@ -41,19 +50,108 @@
                                             </div><!-- /.form-group -->
                                             
                                             <div class="form-group">
-                                                <select class="form-control">
+                                                <select class="form-control" id="usertype_selection">
                                                   <option value="">Select User Type</option>
-                                                  <option value="Buyer">Volvo</option>
-                                                  <option value="Developer">Saab</option>
-                                                  <option value="Agent">Mercedes</option>
-                                                  <option value="Owner">Audi</option>
+                                                  <option value="Buyer" id="buyer_selected">Buyer</option>
+                                                  <option value="Developer" id="dev_selected">Developer</option>
                                                 </select>
                                                  
                                             </div><!-- /.form-group -->
-                                            
+
                                             <div class="form-group">
+                                                <input type="button" value="Next" class="btn btn-primary btn-inversed btn-block" id="basic_to_usertype">
+                                            </div>
+                                            </div>
+
+                                            <div class="form-group hidden" id="buyer_info">
+                                                <div class="form-group">
+                                                    <label>Occupation</label>
+                                                    <input type="text" class="form-control">
+                                                </div><!-- /.form-group -->
+                                                <div class="form-group">
+                                                    <label>Approx. Yearly Income</label>
+                                                    <input type="Text" class="form-control">
+                                                </div><!-- /.form-group -->
+                                                <div class="form-group">
+                                                <select class="form-control">
+                                                  <option value="">Latest Educational Qualification</option>
+                                                  <option value="N/A">N/A</option>
+                                                  <option value="PhD">PhD</option>
+                                                  <option value="Post Graduate">Post Graduate</option>
+                                                  <option value="Graduate">Graduate</option>
+                                                  <option value="HSC">HSC</option>
+                                                  <option value="SSC">SSC</option>
+                                                </select>
+                                                    </div>
+                                                <div class="form-group">
+                                                <select class="form-control">
+                                                  <option value="">Marital Status</option>
+                                                  <option value="Married">Married</option>
+                                                  <option value="Bachelor">Bachelor</option>
+                                                  <option value="Widow/Widower">Widow/Widower</option>
+                                                  <option value="Divorced">Divorced</option>
+                                                 </select>
+                                                    </div>
+
+                                                 <div class="form-group">
+                                                    <label>No. of family members</label>
+                                                    <input type="Text" class="form-control">
+                                                </div><!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                <input type="button" value="Next" class="btn btn-primary btn-inversed btn-block" id="buyer_to_address">
+                                            </div>
+                                            </div>
+
+                                            <div class="form-group hidden" id="developer_info">
+                                                <div class="form-group">
+                                                    <label>Company Name</label>
+                                                    <input type="Text" class="form-control">
+                                                </div><!-- /.form-group -->
+                                                <div class="form-group">
+                                                    <label>License No.</label>
+                                                    <input type="Text" class="form-control">
+                                                </div><!-- /.form-group -->
+                                                <div class="form-group">
+                                                    <label>Chairman</label>
+                                                    <input type="Text" class="form-control">
+                                                </div><!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <input type="button" value="Next" class="btn btn-primary btn-inversed btn-block" id="developer_to_address">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group hidden" id="address_info">
+                                                <div class="form-group">
+                                                    <select class="form-control">
+                                                        <option value="">Select Country</option>
+                                                        <option value="Bangladesh">Bangladesh</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-control">
+                                                        <option value="">Select District</option>
+                                                        <option value="Dhaka">Dhaka</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select class="form-control">
+                                                        <option value="">Select Area/Upazilla</option>
+                                                        <option value="Mirpur">Mirpur</option>
+                                                        <option value="Banani">Banani</option>
+                                                        <option value="Gulshan">Gulshan</option>
+                                                        <option value="Dhanmondi">Dhanmondi</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
                                                 <input type="submit" value="Register" class="btn btn-primary btn-inversed btn-block">
                                             </div><!-- /.form-group -->
+                                            </div>
+                                            
+                                            
+                                           
                                         </form>
                                     </div><!-- /.box -->
                                 </div>
@@ -121,7 +219,37 @@
 </script>
             
             
-            
+<script>
+    $("#basic_to_usertype").click(function (e) {
+        if (document.getElementById("usertype_selection").value == "Buyer") {
+            $("#basic_user_info").addClass('hidden');
+            $("#address_info").addClass('hidden');
+            $("#developer_info").addClass('hidden');
+            $("#buyer_info").removeClass('hidden');
+        }
+    });
+    $("#basic_to_usertype").click(function (e) {
+        if (document.getElementById("usertype_selection").value == "Developer") {
+
+            $("#basic_user_info").addClass('hidden');
+            $("#address_info").addClass('hidden');
+            $("#buyer_info").addClass('hidden');
+            $("#developer_info").removeClass('hidden');
+        }
+    });
+    $("#buyer_to_address").click(function (e) {
+        $("#basic_user_info").addClass('hidden');
+        $("#developer_info").addClass('hidden');
+        $("#buyer_info").addClass('hidden');
+        $("#address_info").removeClass('hidden');
+    });
+    $("#developer_to_address").click(function (e) {
+        $("#basic_user_info").addClass('hidden');
+        $("#developer_info").addClass('hidden');
+        $("#buyer_info").addClass('hidden');
+        $("#address_info").removeClass('hidden');
+    });
+</script>            
             
             
             
