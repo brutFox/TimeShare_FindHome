@@ -125,7 +125,7 @@
 
                                                 <div class="property-row-content col-sm-6 col-md-6 col-lg-8 col-md-6 col-lg-8">
                                                     <h3 class="property-row-title">
-                                                        <a href="#">
+                                                        <a href="/View/HomeDetail.aspx?HomeId=<%=HomeFeatureInfo.GetInt32(0)%>">
                                                             <asp:Label ID="LabelName" runat="server" Text="">
 
                                                             </asp:Label>

@@ -51,6 +51,19 @@ namespace TimeShare_FindHome.Model
             return Reader;
         }
 
+        public MySqlDataReader ReturnHomeFeatureInfoById(HomeFeature Obj)
+        {
+            string Query = "SELECT * FROM home_feature WHERE home_feature_id = '" + Obj.home_feature_id + "' ";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            return Reader;
+        }
+
 
     }
 }
