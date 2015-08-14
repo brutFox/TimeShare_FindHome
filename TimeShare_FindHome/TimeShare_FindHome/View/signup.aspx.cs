@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TimeShare_FindHome.Model;
-using System.Data;
 using System.Configuration;
 using MySql.Data.MySqlClient;
 
@@ -35,20 +35,28 @@ namespace TimeShare_FindHome
             Session["name"] = u_reg.name;
             Session["email"] = u_reg.email;
             Session["pass"] = u_reg.password;
+            Session["phone"] = this.phone.Text;
+            Session["gender"] = this.Gender.SelectedValue.ToString();
 
 
 
             if (this.usertype_selection.SelectedValue == "Buyer")
             {
-                Session["type"] = 0;
+                Session["type"] = "Buyer";
                 Response.Redirect("~/View/SignUp_Buyer.aspx");
                 //this.reg_email.Text = "nai mama";
             }
             else if (this.usertype_selection.SelectedValue == "Developer")
+            {
+                Session["type"] = "Developer";
                 Response.Redirect("~/View/SignUp_Developer.aspx");
-            else if(this.usertype_selection.SelectedValue == "Agent")
-                Response.Redirect("~/View/SignUp_Agent.aspx");
+            }
 
+            else if (this.usertype_selection.SelectedValue == "Agent")
+            {
+                Session["type"] = "Agent";
+                Response.Redirect("~/View/SignUp_Agent.aspx");
+            }
         }
     }
 }

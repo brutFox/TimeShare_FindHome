@@ -21,9 +21,9 @@ namespace TimeShare_FindHome.View
         }
         protected void developer_to_address_Click(object sender, EventArgs e)
         {
-            u_reg.company_name = this.reg_company_name.Text.ToString();
-            u_reg.company_license = int.Parse(this.reg_company_license.Text.ToString());
-            u_reg.chairman = this.reg_chairman.Text.ToString();
+            Session["company_name"] = this.reg_company_name.Text.ToString();
+            Session["company_license"] = int.Parse(this.reg_company_license.Text.ToString());
+            Session["chairman"] = this.reg_chairman.Text.ToString();
 
             Response.Redirect("~/View/SignUp_Address.aspx");
         }

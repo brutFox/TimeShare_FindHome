@@ -111,7 +111,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <asp:Button ID="sign_in_btn" runat="server" Text="Login" CssClass="btn btn-primary btn-inversed btn-block" OnClick="sign_in_btn_Click"></asp:Button>
+                                                <asp:Button ID="sign_in_btn" runat="server" Text="Login" CssClass="btn btn-primary btn-inversed btn-block" ></asp:Button>
                                             </div><!-- /.form-group -->
                                         </form>
                                     </div><!-- /.box -->

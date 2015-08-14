@@ -95,6 +95,25 @@
                                                     <asp:TextBox runat="server" CssClass="form-control" ID="reg_email"></asp:TextBox>
                                                 </div>
                                                 <!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <asp:DropDownList CssClass="form-control" runat="server" ID="Gender">
+                                                        <asp:ListItem Value="">
+                                                        Select User Type
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Male">
+                                                        Male
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Female">
+                                                        Female
+                                                        </asp:ListItem>
+                                                        <asp:ListItem Value="Other">
+                                                        Other
+                                                        </asp:ListItem>
+                                                    </asp:DropDownList>
+
+                                                </div>
+                                                <!-- /.form-group -->
                                             
                                                 <div class="form-group">
                                                     <label>Uaer Name</label>
@@ -111,6 +130,12 @@
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
                                                     <asp:TextBox runat="server" CssClass="form-control" ID="reg_conf_pass" TextMode="Password"></asp:TextBox>
+                                                </div>
+                                                <!-- /.form-group -->
+
+                                                <div class="form-group">
+                                                    <label>Phone</label>
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="phone" TextMode="Password"></asp:TextBox>
                                                 </div>
                                                 <!-- /.form-group -->
 

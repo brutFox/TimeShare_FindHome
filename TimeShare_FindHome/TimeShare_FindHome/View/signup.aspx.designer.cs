@@ -31,6 +31,15 @@ namespace TimeShare_FindHome {
         protected global::System.Web.UI.WebControls.TextBox reg_email;
         
         /// <summary>
+        /// Gender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Gender;
+        
+        /// <summary>
         /// user_name control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace TimeShare_FindHome {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox reg_conf_pass;
+        
+        /// <summary>
+        /// phone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox phone;
         
         /// <summary>
         /// usertype_selection control.
