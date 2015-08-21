@@ -11,7 +11,7 @@ namespace TimeShare_FindHome.Model
     {
         public int home_feature_id { get; set; }
         public string name { get; set; }
-        public float price { get; set; }
+        public Double price { get; set; }
         public int address { get; set; }
         public int no_of_room { get; set; }
         public int area { get; set; }
@@ -19,7 +19,6 @@ namespace TimeShare_FindHome.Model
         public int beds { get; set; }
         public int garages { get; set; }
         public string description { get; set; }
-        public int rent_duration  { get; set; }
         public string photo1 { get; set; }
         public string photo2 { get; set; }
         public string photo3 { get; set; }
@@ -62,6 +61,23 @@ namespace TimeShare_FindHome.Model
             MySqlDataReader Reader = Command.ExecuteReader();
 
             return Reader;
+        }
+        
+        public Int32 InsertHomeFeatureData(HomeFeature Obj)
+        {
+            string Query = "INSERT INTO home_feature (name, price, address, no_of_room, area, baths, beds, garages, description, photo1, photo2, photo3, photo4) VALUES ('" + Obj.name + "', '" + Obj.price + "', '" + Obj.address + "', '" + Obj.no_of_room + "', '" + Obj.area + "', '" + Obj.baths + "', '" + Obj.beds + "', '" + Obj.garages + "', '" + Obj.description + "', '" + Obj.photo1 + "', '" + Obj.photo2 + "', '" + Obj.photo3 + "', '" + Obj.photo4 + "')";
+            string Query2 = "SELECT LAST_INSERT_ID()";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            MySqlCommand Command2 = new MySqlCommand(Query2, Connection);
+            Connection.Open();
+
+            Command.ExecuteNonQuery();
+            Int32 InsertedId = Convert.ToInt32(Command2.ExecuteScalar());
+
+
+            return InsertedId;
         }
 
 

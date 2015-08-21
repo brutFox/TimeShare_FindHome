@@ -71,6 +71,82 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\database\timeshare.sql" />
+    <Content Include="Assets\Admin\css\realsite-admin.css" />
+    <Content Include="Assets\Admin\css\realsite.css" />
+    <Content Include="Assets\Admin\img\flags\de.png" />
+    <Content Include="Assets\Admin\img\flags\fr.png" />
+    <Content Include="Assets\Admin\img\landing\realsite-admin-browser.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-admin-dashboard.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-admin-login.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-admin-map.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-footer-3-columns.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-footer-4-columns.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-footer-small.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-footer-standard.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-header-call-to-action.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-header-chart.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-header-image.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-header-search.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-property-detail.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-property-row.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-property-simple.jpg" />
+    <Content Include="Assets\Admin\img\landing\realsite-property-submit.jpg" />
+    <Content Include="Assets\Admin\img\logo-blue.png" />
+    <Content Include="Assets\Admin\img\logo.png" />
+    <Content Include="Assets\Admin\img\magnifier.png" />
+    <Content Include="Assets\Admin\img\map.png" />
+    <Content Include="Assets\Admin\img\partners\logo1.png" />
+    <Content Include="Assets\Admin\img\partners\logo2.png" />
+    <Content Include="Assets\Admin\img\partners\logo3.png" />
+    <Content Include="Assets\Admin\img\partners\logo4.png" />
+    <Content Include="Assets\Admin\img\partners\logo5.png" />
+    <Content Include="Assets\Admin\img\partners\logo6.png" />
+    <Content Include="Assets\Admin\img\tmp\1-blur.jpg" />
+    <Content Include="Assets\Admin\img\tmp\1.jpg" />
+    <Content Include="Assets\Admin\img\tmp\agents\female.jpg" />
+    <Content Include="Assets\Admin\img\tmp\agents\male.jpg" />
+    <Content Include="Assets\Admin\img\tmp\large\1.jpg" />
+    <Content Include="Assets\Admin\img\tmp\large\2.jpg" />
+    <Content Include="Assets\Admin\img\tmp\large\3.jpg" />
+    <Content Include="Assets\Admin\img\tmp\medium\1.jpg" />
+    <Content Include="Assets\Admin\img\tmp\medium\2.jpg" />
+    <Content Include="Assets\Admin\img\tmp\medium\3.jpg" />
+    <Content Include="Assets\Admin\img\tmp\medium\4.jpg" />
+    <Content Include="Assets\Admin\img\tmp\medium\5.jpg" />
+    <Content Include="Assets\Admin\img\tmp\medium\6.jpg" />
+    <Content Include="Assets\Admin\img\tmp\mix-bw.png" />
+    <Content Include="Assets\Admin\img\transparent-marker-image.png" />
+    <Content Include="Assets\Admin\js\charts.js" />
+    <Content Include="Assets\Admin\js\jquery.js" />
+    <Content Include="Assets\Admin\js\map.js" />
+    <Content Include="Assets\Admin\js\realsite-admin.js" />
+    <Content Include="Assets\Admin\js\realsite.js" />
+    <Content Include="Assets\Admin\libraries\autosize\jquery.autosize.js" />
+    <Content Include="Assets\Admin\libraries\bootstrap-fileinput\css\fileinput.min.css" />
+    <Content Include="Assets\Admin\libraries\bootstrap-fileinput\img\loading-sm.gif" />
+    <Content Include="Assets\Admin\libraries\bootstrap-fileinput\img\loading.gif" />
+    <Content Include="Assets\Admin\libraries\bootstrap-fileinput\js\fileinput.min.js" />
+    <Content Include="Assets\Admin\libraries\bootstrap-select\dist\css\bootstrap-select.min.css" />
+    <Content Include="Assets\Admin\libraries\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\javascripts\bootstrap\collapse.js" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\javascripts\bootstrap\dropdown.js" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\javascripts\bootstrap\transition.js" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\fonts\fontawesome-webfonte0a5.svg" />
+    <Content Include="Assets\Admin\libraries\isotope\dist\isotope.pkgd.min.js" />
+    <Content Include="Assets\Admin\libraries\jquery-google-map\infobox.js" />
+    <Content Include="Assets\Admin\libraries\jquery-google-map\jquery-google-map.js" />
+    <Content Include="Assets\Admin\libraries\jquery-google-map\markerclusterer.js" />
+    <Content Include="Assets\Admin\libraries\jquery-transit\jquery.transit.js" />
+    <Content Include="Assets\Admin\libraries\jquery.scrollTo\jquery.scrollTo.min.js" />
+    <Content Include="Assets\Admin\libraries\nvd3\examples\stream_layers.js" />
+    <Content Include="Assets\Admin\libraries\nvd3\lib\d3.v3.js" />
+    <Content Include="Assets\Admin\libraries\nvd3\nv.d3.min.css" />
+    <Content Include="Assets\Admin\libraries\nvd3\nv.d3.min.js" />
+    <Content Include="Assets\Admin\libraries\OwlCarousel\owl-carousel\grabbing.png" />
+    <Content Include="Assets\Admin\libraries\OwlCarousel\owl-carousel\owl.carousel.css" />
+    <Content Include="Assets\Admin\libraries\OwlCarousel\owl-carousel\owl.carousel.min.js" />
     <Content Include="Assets\css\realocation.css" />
     <Content Include="Assets\css\variants\blue.css" />
     <Content Include="Assets\css\variants\brown.css" />
@@ -179,6 +255,8 @@
     <Content Include="Assets\libraries\jquery-bxslider\jquery.bxslider.min.js" />
     <Content Include="Assets\login_less.css" />
     <Content Include="packages.config" />
+    <Content Include="View\Admin\AddHome.aspx" />
+    <Content Include="View\Admin\DashBoard.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\HomeDetail.aspx" />
     <Content Include="View\HomeSearchResult.aspx" />
@@ -186,7 +264,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="View\FrontEnd.Master" />
-    <Content Include="View\admin\Admin.Master" />
+    <Content Include="View\Admin\Admin.Master" />
     <Content Include="Assets\libraries\flexslider\fonts\flexslider-icon.eot" />
     <Content Include="Assets\libraries\flexslider\fonts\flexslider-icon.ttf" />
     <Content Include="Assets\libraries\flexslider\fonts\flexslider-icon.woff" />
@@ -195,6 +273,16 @@
     <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontba72.ttf" />
     <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontba72.woff" />
     <Content Include="Assets\libraries\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\Admin\libraries\bootstrap\assets\fonts\bootstrap\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\fonts\fontawesome-webfonte0a5.eot" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\fonts\fontawesome-webfonte0a5.ttf" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\fonts\fontawesome-webfonte0a5.woff" />
+    <Content Include="Assets\Admin\libraries\Font-Awesome\fonts\fontawesome-webfonte0a5.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,17 +298,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\HomeCondition.cs" />
     <Compile Include="Model\District.cs" />
     <Compile Include="Model\Home.cs" />
     <Compile Include="Model\HomeFeature.cs" />
+    <Compile Include="Model\Owner.cs" />
+    <Compile Include="Model\Seller.cs" />
     <Compile Include="Model\Upazilla.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="View\admin\Admin.Master.cs">
+    <Compile Include="View\Admin\AddHome.aspx.cs">
+      <DependentUpon>AddHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\AddHome.aspx.designer.cs">
+      <DependentUpon>AddHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\admin\Admin.Master.designer.cs">
+    <Compile Include="View\Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\FrontEnd.Master.cs">
       <DependentUpon>FrontEnd.Master</DependentUpon>
@@ -280,9 +385,7 @@
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

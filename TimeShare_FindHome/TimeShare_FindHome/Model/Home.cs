@@ -10,9 +10,8 @@ namespace TimeShare_FindHome.Model
     public class Home
     {
         public int home_id { get; set; }
-        public int u_id { get; set; }
-        public string developer { get; set; }
-        public string owner { get; set; }
+        public int dev_id { get; set; }
+        public int owner_id { get; set; }
         public int home_feature_id { get; set; }
         public string type { get; set; }
 
@@ -40,6 +39,18 @@ namespace TimeShare_FindHome.Model
             MySqlDataReader Reader = Command.ExecuteReader();
 
             return Reader;
+        }
+
+        public void InsertHomeData(Home Obj)
+        {
+            string Query = "INSERT INTO home (dev_id, owner_id, home_feature_id, type) VALUES ('" + Obj.dev_id + "', '" + Obj.owner_id + "', '" + Obj.home_feature_id + "', '" + Obj.type + "')";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            Command.ExecuteNonQuery();
+
         }
     }
 }

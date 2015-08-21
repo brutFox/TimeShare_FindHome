@@ -15,7 +15,8 @@ namespace TimeShare_FindHome.View
         public District ObjDistrict = new District();
         public Upazilla ObjUpazilla = new Upazilla();
         public Address ObjAddress = new Address();
-
+        public HomeCondition ObjCondition = new HomeCondition();
+        public int HomeFeatureId;
         public int AddressId2;
 
         protected void Page_Load(object sender, EventArgs e)

@@ -10,14 +10,26 @@ namespace TimeShare_FindHome.Model
 {
     public class User
     {
-        public SqlCommand sqlconnection(string sql)
-        {
-            string conn_str = ConfigurationManager.ConnectionStrings["Library_management"].ConnectionString;
-            SqlConnection connection = new SqlConnection(conn_str);
-            SqlCommand cmd = new SqlCommand(sql, connection);
-            connection.Open();
+        public int u_id { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
+        public string gender { get; set; }
+        public string phone { get; set; }
+        public int address_id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
 
-            return cmd;
+        public MySqlDataReader ReturnUserInfoById(User Obj)
+        {
+            string Query = "SELECT * FROM user WHERE u_id = '" + Obj.u_id + "' ";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            return Reader;
         }
     }
 }

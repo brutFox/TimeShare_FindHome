@@ -18,9 +18,14 @@ namespace TimeShare_FindHome
         public Upazilla ObjUpazilla = new Upazilla();
         public Model.Home ObjHome = new Model.Home();
         public HomeFeature ObjHomeFeature = new HomeFeature();
+        public HomeCondition ObjCondition = new HomeCondition();
+        public int HomeFeatureId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["UserSalary"] = 57000;
+            Session["UserHomeTown"] = "Dhaka";
+            Session["UserEducation"] = 1;
             if (IsPostBack)
             {
                 int DistrictId;

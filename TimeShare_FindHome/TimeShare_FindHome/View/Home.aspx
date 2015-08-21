@@ -11,7 +11,8 @@
 <div class="block-content no-padding">
     <div class="block-content-inner">
         <div class="map-wrapper">
-            <div id="map" data-style="1"></div><!-- /#map -->
+            <div id="map" data-style="1">
+            </div><!-- /#map -->
 
             <div class="container">
                 <div class="row">
@@ -30,13 +31,7 @@
                                                </asp:ListItem>
                                            </asp:DropDownList>
                                         </div><!-- /.select-wrapper -->
-                                    </div><!-- /.form-group -->
-
-                                    <div class="form-group col-sm-12">
-                                        <label>District</label>
-                                            <asp:TextBox ID="TextBoxDistrict" runat="server" CssClass="form-control">
-
-                                            </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Select A Country" ControlToValidate="DropDownListCountry" Display="Dynamic" Font-Italic="True" Font-Bold="True" ForeColor="White"></asp:RequiredFieldValidator>
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-12">
@@ -44,6 +39,15 @@
                                            <asp:TextBox ID="TextBoxUpazilla" runat="server" CssClass="form-control">
 
                                             </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Select A Upazilla" ControlToValidate="TextBoxUpazilla" Display="Dynamic" Font-Italic="True" ForeColor="White" Font-Bold="True"></asp:RequiredFieldValidator>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group col-sm-12">
+                                        <label>District</label>
+                                            <asp:TextBox ID="TextBoxDistrict" runat="server" CssClass="form-control">
+
+                                            </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Select A District" ControlToValidate="TextBoxDistrict" Display="Dynamic" Font-Italic="True" Font-Bold="True" ForeColor="White"></asp:RequiredFieldValidator>
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-12">
@@ -62,7 +66,7 @@
                 <!-- SLOGAN -->
 <div class="block-content background-primary background-map block-content-small-padding fullwidth">
     <div class="block-content-inner">
-        <h2 class="no-margin center caps">Only Real Estate Template You Will Ever Need</h2>
+        <h2 class="no-margin center caps">Buy Your Home Now!</h2>
     </div><!-- /.block-content-iner -->
 </div><!-- /.block-content-->                <!-- ISOTOPE GRID -->
 <div class="block-content block-content-small-padding">
@@ -86,130 +90,146 @@
         {
             while (HomeFeatureInfo.Read())
             {
-                this.LabelName.Text = HomeFeatureInfo.GetString(1).ToString();
-                this.LabelPrice.Text = ("$ " + HomeFeatureInfo.GetFloat(2)).ToString();
-                this.LabelBath.Text = HomeFeatureInfo.GetInt32(6).ToString();
-                this.LabelBed.Text = HomeFeatureInfo.GetInt32(7).ToString();
-                this.LabelArea.Text = HomeFeatureInfo.GetInt32(5).ToString();
-                this.LabelGarege.Text = HomeFeatureInfo.GetInt32(8).ToString();
+                ObjHomeFeature.home_feature_id = HomeFeatureInfo.GetInt32(0);
+                MySqlDataReader ConditionInfo = ObjCondition.ReturnConditionInfoByHomeFeatureId(ObjHomeFeature);
 
-                ObjHomeFeature.address = HomeFeatureInfo.GetInt32(3);
-                MySqlDataReader AddressInfo = ObjAddress.ReturnAddressInfo(ObjHomeFeature);
-                if (AddressInfo.HasRows)
+                if (ConditionInfo.HasRows)
                 {
-                    while (AddressInfo.Read())
+                    while (ConditionInfo.Read())
                     {
-                        ObjAddress.district = AddressInfo.GetInt32(2);
-                        ObjAddress.upazilla = AddressInfo.GetInt32(3);
-
-                        MySqlDataReader DistrictInfo = ObjDistrict.ReturnDistrictInfo(ObjAddress);
-                        if (DistrictInfo.HasRows)
+                        if (Convert.ToDouble(Session["UserSalary"]) <= ConditionInfo.GetFloat(2) || Session["UserHomeTown"] == ConditionInfo.GetString(3).ToString() || Convert.ToInt16(Session["UserEducation"]) <= ConditionInfo.GetInt16(4))
                         {
-                            while (DistrictInfo.Read())
-                            {
-                                this.LabelDistrict.Text = DistrictInfo.GetString(1).ToString();
-                            }
+                            
                         }
-
-                        MySqlDataReader UpazillaInfo = ObjUpazilla.ReturnUpazillaInfo(ObjAddress);
-                        if (UpazillaInfo.HasRows)
+                        else
                         {
-                            while (UpazillaInfo.Read())
-                            {
-                                this.LabelUpazilla.Text = (UpazillaInfo.GetString(1) + ",").ToString();
-                            }
+                                this.LabelName.Text = HomeFeatureInfo.GetString(1).ToString();
+                                this.LabelPrice.Text = ("$ " + HomeFeatureInfo.GetFloat(2)).ToString();
+                                this.LabelBath.Text = HomeFeatureInfo.GetInt32(6).ToString();
+                                this.LabelBed.Text = HomeFeatureInfo.GetInt32(7).ToString();
+                                this.LabelArea.Text = HomeFeatureInfo.GetInt32(5).ToString();
+                                this.LabelGarege.Text = HomeFeatureInfo.GetInt32(8).ToString();
+
+                                ObjHomeFeature.address = HomeFeatureInfo.GetInt32(3);
+                                MySqlDataReader AddressInfo = ObjAddress.ReturnAddressInfo(ObjHomeFeature);
+                                if (AddressInfo.HasRows)
+                                {
+                                    while (AddressInfo.Read())
+                                    {
+                                        ObjAddress.district = AddressInfo.GetInt32(2);
+                                        ObjAddress.upazilla = AddressInfo.GetInt32(3);
+
+                                        MySqlDataReader DistrictInfo = ObjDistrict.ReturnDistrictInfo(ObjAddress);
+                                        if (DistrictInfo.HasRows)
+                                        {
+                                            while (DistrictInfo.Read())
+                                            {
+                                                this.LabelDistrict.Text = DistrictInfo.GetString(1).ToString();
+                                            }
+                                        }
+
+                                        MySqlDataReader UpazillaInfo = ObjUpazilla.ReturnUpazillaInfo(ObjAddress);
+                                        if (UpazillaInfo.HasRows)
+                                        {
+                                            while (UpazillaInfo.Read())
+                                            {
+                                                this.LabelUpazilla.Text = (UpazillaInfo.GetString(1) + ",").ToString();
+                                            }
+                                        }
+                                    }
+                                }
+            %>                
+                <div class="property-item property-featured col-sm-6 col-md-3">
+                    <div class="property-box">
+                        <div class="property-box-inner">
+                            <h3 class="property-box-title">
+                                <a href="/View/HomeDetail.aspx?HomeId=<%=HomeFeatureInfo.GetInt32(0)%>">
+                                <asp:Label ID="LabelName" runat="server" Text="">
+
+                                </asp:Label>
+                                </a>
+                            </h3>
+                            <h4 class="property-box-subtitle">
+                                <a href="#">
+                                <asp:Label ID="LabelUpazilla" runat="server" Text="">
+
+                                </asp:Label>
+                                    <asp:Label ID="LabelDistrict" runat="server" Text="">
+
+                                    </asp:Label>
+                                </a>
+                            </h4>
+
+                            <div class="property-box-picture">
+                                <div class="property-box-price">
+                                    <asp:Label ID="LabelPrice" runat="server" Text="">
+                                    </asp:Label>
+                                </div>
+                                <!-- /.property-box-price -->
+                                <div class="property-box-picture-inner">
+                                    <a href="property-detail.html" class="property-box-picture-target">
+                                        <img src="/Assets/img/tmp/properties/medium/1.jpg" alt="">
+                                    </a><!-- /.property-box-picture-target -->
+                                </div>
+                                <!-- /.property-picture-inner -->
+                            </div>
+                            <!-- /.property-picture -->
+
+                            <div class="property-box-meta">
+                                <div class="property-box-meta-item col-xs-3 col-sm-3">
+                                    <strong>
+                                        <asp:Label ID="LabelBath" runat="server" Text="">
+                                        </asp:Label>
+                                    </strong>
+                                    <asp:Label ID="Label6" runat="server" Text="Baths">
+                                    </asp:Label>
+                                </div>
+                                <!-- /.col-sm-3 -->
+
+                                <div class="property-box-meta-item col-xs-3 col-sm-3">
+                                    <strong>
+                                        <asp:Label ID="LabelBed" runat="server" Text="">
+                                        </asp:Label>
+                                    </strong>
+                                    <asp:Label ID="Label7" runat="server" Text="Beds">
+                                    </asp:Label>
+                                </div>
+                                <!-- /.col-sm-3 -->
+
+                                <div class="property-box-meta-item col-xs-3 col-sm-3">
+                                    <strong>
+                                        <asp:Label ID="LabelArea" runat="server" Text="">
+                                        </asp:Label>
+                                    </strong>
+                                    <asp:Label ID="Label8" runat="server" Text="Area">
+                                    </asp:Label>
+                                </div>
+                                <!-- /.col-sm-3 -->
+
+                                <div class="property-box-meta-item col-xs-3 col-sm-3">
+                                    <strong>
+                                        <asp:Label ID="LabelGarege" runat="server" Text="">
+                                        </asp:Label>
+                                    </strong>
+                                    <asp:Label ID="Label9" runat="server" Text="Gareges">
+                                    </asp:Label>
+                                </div>
+                                <!-- /.col-sm-3 -->
+                            </div>
+                            <!-- /.property-box-meta -->
+                        </div>
+                        <!-- /.property-box-inner -->
+                    </div>
+                    <!-- /.property-box -->
+                </div>
+                <!-- /.property-item -->                
+            <%                
+                        }
+                    }
                         }
                     }
                 }
-%>                
-    <div class="property-item property-featured col-sm-6 col-md-3">
-        <div class="property-box">
-            <div class="property-box-inner">
-                <h3 class="property-box-title">
-                    <a href="/View/HomeDetail.aspx?HomeId=<%=HomeFeatureInfo.GetInt32(0)%>">
-                    <asp:Label ID="LabelName" runat="server" Text="">
-
-                    </asp:Label>
-                    </a>
-                </h3>
-                <h4 class="property-box-subtitle">
-                    <a href="#">
-                    <asp:Label ID="LabelUpazilla" runat="server" Text="">
-
-                    </asp:Label>
-                        <asp:Label ID="LabelDistrict" runat="server" Text="">
-
-                        </asp:Label>
-                    </a>
-                </h4>
-
-                <div class="property-box-picture">
-                    <div class="property-box-price">
-                        <asp:Label ID="LabelPrice" runat="server" Text="">
-                        </asp:Label>
-                    </div>
-                    <!-- /.property-box-price -->
-                    <div class="property-box-picture-inner">
-                        <a href="property-detail.html" class="property-box-picture-target">
-                            <img src="/Assets/img/tmp/properties/medium/1.jpg" alt="">
-                        </a><!-- /.property-box-picture-target -->
-                    </div>
-                    <!-- /.property-picture-inner -->
-                </div>
-                <!-- /.property-picture -->
-
-                <div class="property-box-meta">
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>
-                            <asp:Label ID="LabelBath" runat="server" Text="">
-                            </asp:Label>
-                        </strong>
-                        <asp:Label ID="Label6" runat="server" Text="Baths">
-                        </asp:Label>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>
-                            <asp:Label ID="LabelBed" runat="server" Text="">
-                            </asp:Label>
-                        </strong>
-                        <asp:Label ID="Label7" runat="server" Text="Beds">
-                        </asp:Label>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>
-                            <asp:Label ID="LabelArea" runat="server" Text="">
-                            </asp:Label>
-                        </strong>
-                        <asp:Label ID="Label8" runat="server" Text="Area">
-                        </asp:Label>
-                    </div>
-                    <!-- /.col-sm-3 -->
-
-                    <div class="property-box-meta-item col-xs-3 col-sm-3">
-                        <strong>
-                            <asp:Label ID="LabelGarege" runat="server" Text="">
-                            </asp:Label>
-                        </strong>
-                        <asp:Label ID="Label9" runat="server" Text="Gareges">
-                        </asp:Label>
-                    </div>
-                    <!-- /.col-sm-3 -->
-                </div>
-                <!-- /.property-box-meta -->
-            </div>
-            <!-- /.property-box-inner -->
-        </div>
-        <!-- /.property-box -->
-    </div>
-    <!-- /.property-item -->                
-<%                
-            }
-        }
-    %>
+        %>
 </div>
 <!-- /.row -->
 </div>
@@ -559,40 +579,6 @@
 </li>
 </ul>
 </div><!-- /.block-content-inner -->
-</div><!-- /.block-content -->                <!-- STATISTICS -->
-<div class="block-content block-content-small-padding">
-    <div class="block-content-inner">
-        <div class="center">
-            <h2 class="color-primary">Over 10 000 Properties In Our Directory</h2>
-        </div><!-- /.center -->
-
-        <div class="row">
-            <div class="col-sm-2 col-sm-offset-2">
-                <div class="block-stats background-dots background-primary color-white">
-                    <strong>3500+</strong>
-                    <span>Apartments</span>
-                </div><!-- /.block-stats -->
-            </div>
-            <div class="col-sm-2">
-                <div class="block-stats background-dots background-primary color-white">
-                    <strong>3000+</strong>
-                    <span>Houses</span>
-                </div><!-- /.block-stats -->
-            </div>
-            <div class="col-sm-2">
-                <div class="block-stats background-dots background-primary color-white">
-                    <strong>5000+</strong>
-                    <span>Condos</span>
-                </div><!-- /.block-stats -->
-            </div>
-            <div class="col-sm-2">
-                <div class="block-stats background-dots background-primary color-white">
-                    <strong>2500+</strong>
-                    <span>Areas</span>
-                </div><!-- /.block-stats -->
-            </div>
-        </div><!-- /.row -->
-    </div><!-- /.block-content-inner -->
-</div><!-- /.block-content -->
+</div><!-- /.block-content -->  
     </div>
 </asp:Content>

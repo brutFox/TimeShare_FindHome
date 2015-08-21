@@ -38,5 +38,18 @@ namespace TimeShare_FindHome.Model
 
             return Reader;
         }
+
+        public MySqlDataReader ReturnUpazillaInfo()
+        {
+            string Query = "SELECT * FROM upazilla";
+            string ConnectionString = ConfigurationManager.ConnectionStrings["TimeShareConnection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand Command = new MySqlCommand(Query, Connection);
+            Connection.Open();
+
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            return Reader;
+        }
     }
 }

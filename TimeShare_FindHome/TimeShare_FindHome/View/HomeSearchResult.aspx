@@ -23,7 +23,20 @@
     {
         while (HomeFeatureInfo.Read())
         {
-            this.LabelBath.Text = HomeFeatureInfo.GetInt32(6).ToString();
+            ObjHomeFeature.home_feature_id = HomeFeatureInfo.GetInt32(0);
+
+            MySqlDataReader ConditionInfo = ObjCondition.ReturnConditionInfoByHomeFeatureId(ObjHomeFeature);
+            if (ConditionInfo.HasRows)
+            {
+                while (ConditionInfo.Read())
+                {
+                    if (Convert.ToDouble(Session["UserSalary"]) <= ConditionInfo.GetFloat(2) || Session["UserHomeTown"] == ConditionInfo.GetString(3).ToString() || Convert.ToInt16(Session["UserEducation"]) <= ConditionInfo.GetInt16(4))
+                    {
+
+                    }
+                    else
+                    {
+                                    this.LabelBath.Text = HomeFeatureInfo.GetInt32(6).ToString();
             this.LabelBed.Text = HomeFeatureInfo.GetInt32(7).ToString();
             this.LabelArea.Text = HomeFeatureInfo.GetInt32(5).ToString();
             this.LabelGarege.Text = HomeFeatureInfo.GetInt32(8).ToString();
@@ -58,7 +71,7 @@
                     }
                 }
             }
-%>            
+%>
                                         <div class="property-row">
                                             <div class="row">
                                                 <div class="property-row-picture col-sm-6 col-md-6 col-lg-4 col-md-6 col-lg-4">
@@ -155,7 +168,12 @@
                                                     </p><!-- /.property-row-body -->
                                                 </div><!-- /.property-row-content -->
                                             </div><!-- /.row -->
-                                        </div><!-- /.property-row -->
+                                        </div><!-- /.property-row -->                                         
+<%                    }
+                }
+            } 
+%>          
+
 <%                                                    
             
         }
@@ -183,13 +201,7 @@
                                                </asp:ListItem>
                                            </asp:DropDownList>
                                         </div><!-- /.select-wrapper -->
-                                    </div><!-- /.form-group -->
-
-                                    <div class="form-group col-sm-12">
-                                        <label>District</label>
-                                            <asp:TextBox ID="TextBoxDistrict" runat="server" CssClass="form-control">
-
-                                            </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Select A Country" ControlToValidate="DropDownListCountry" Display="Dynamic" Font-Italic="True" Font-Bold="True" ForeColor="Black"></asp:RequiredFieldValidator>
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-12">
@@ -197,6 +209,15 @@
                                            <asp:TextBox ID="TextBoxUpazilla" runat="server" CssClass="form-control">
 
                                             </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Select A Upazilla" ControlToValidate="TextBoxUpazilla" Display="Dynamic" Font-Italic="True" ForeColor="Black" Font-Bold="True"></asp:RequiredFieldValidator>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group col-sm-12">
+                                        <label>District</label>
+                                            <asp:TextBox ID="TextBoxDistrict" runat="server" CssClass="form-control">
+
+                                            </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Select A Country" ControlToValidate="TextBoxDistrict" Display="Dynamic" Font-Italic="True" Font-Bold="True" ForeColor="Black"></asp:RequiredFieldValidator>
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-12">

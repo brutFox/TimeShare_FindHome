@@ -16,6 +16,7 @@ namespace TimeShare_FindHome.View
         public District ObjDistrict = new District();
         public Upazilla ObjUpazilla = new Upazilla();
         public Address ObjAddress = new Address();
+        public Model.Home ObjHome = new Model.Home();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +25,24 @@ namespace TimeShare_FindHome.View
                 int HomeId;
                 HomeId = int.Parse(Request.QueryString["HomeId"]);
                 GetHomeFeatureInfoByAddress(HomeId);
+                GetHomeInfoByHomeFeatureId(HomeId);
             }
+        }
+
+
+        public void GetHomeInfoByHomeFeatureId(int HomeFeaturedId)
+        {
+            ObjHome.home_feature_id = HomeFeaturedId;
+
+            MySqlDataReader HomeInfo = ObjHome.ReturnHomeInfoByFeatureId(ObjHome);
+            if (HomeInfo.HasRows)
+            {
+                while (HomeInfo.Read())
+                {
+                    this.LabelType.Text = HomeInfo.GetString(4).ToString();
+                }
+            }
+
         }
 
         public void GetHomeFeatureInfoByAddress(int HomeId)
