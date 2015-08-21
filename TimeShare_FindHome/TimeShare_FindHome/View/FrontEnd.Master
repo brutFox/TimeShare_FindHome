@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" href="~/Assets/libraries/jquery-bxslider/jquery.bxslider.css" media="screen, projection"/>
     <link rel="stylesheet" type="text/css" href="~/Assets/libraries/flexslider/flexslider.css" media="screen, projection"/>
     <link rel="stylesheet" type="text/css" href="~/Assets/css/realocation.css" media="screen, projection"/>
-
+    
+    <script src="../Assets/js/jquery.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css"/>
 
     <title>
@@ -89,6 +90,9 @@
         </asp:ContentPlaceHolder>
 
         <asp:ContentPlaceHolder ID="HomeDetailPage" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="SignUpPage" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>

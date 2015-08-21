@@ -10,51 +10,42 @@
 namespace TimeShare_FindHome.View {
     
     
-    public partial class FrontEnd {
+    public partial class SignUp_Address {
         
         /// <summary>
-        /// form1 control.
+        /// country_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DropDownList country_selection;
         
         /// <summary>
-        /// HomePage control.
+        /// district_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomePage;
+        protected global::System.Web.UI.WebControls.DropDownList district_selection;
         
         /// <summary>
-        /// HomeSearchPage control.
+        /// area_selection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomeSearchPage;
+        protected global::System.Web.UI.WebControls.DropDownList area_selection;
         
         /// <summary>
-        /// HomeDetailPage control.
+        /// Register_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomeDetailPage;
-        
-        /// <summary>
-        /// SignUpPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder SignUpPage;
+        protected global::System.Web.UI.WebControls.Button Register_btn;
     }
 }

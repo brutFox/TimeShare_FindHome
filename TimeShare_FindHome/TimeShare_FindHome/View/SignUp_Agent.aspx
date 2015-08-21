@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="TimeShare_FindHome.View.SignIn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp_Agent.aspx.cs" Inherits="TimeShare_FindHome.View.SignUp_Agent" %>
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
 
 
     <title>
-        Timeshare | Signin
+        Timeshare | SignUp
     </title>
 </head>
 
@@ -78,44 +78,34 @@
                         <div class="block-content-inner">
                             <div class="row">
                                 <div class="col-sm-4 col-sm-offset-4">
-                                    <h2 class="center">Login</h2>
+                                    <h2 class="center">SignUp</h2>
 
-                                    <div class="box">
+
+                                     <div class="box">
                                         <form Runat="Server">
-                                            <div class="form-group">
-                                                <label>Login</label>
-                                                <asp:TextBox ID="username" runat="server" CssClass="form-control">
-                                                </asp:TextBox>
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                                            </div><!-- /.form-group -->
 
-                                            <div class="form-group">
-                                                <label>Type</label>
-                                                <div class="select-wrapper">
-                                                <asp:DropDownList ID="DropDownListType" runat="server" CssClass="form-control">
-                                                    <asp:ListItem Value="">
-                                                        Select Type
-                                                    </asp:ListItem>
-                                                    <asp:ListItem Value="0">
-                                                        Buyer
-                                                    </asp:ListItem>
-                                                    <asp:ListItem Value="1">
-                                                        Developer
-                                                    </asp:ListItem>
-                                                </asp:DropDownList>
-                                                </div><!-- /.select-wrapper -->
+                                            <div class="form-group" id="agent_info">
+                                                <div class="form-group">
+                                                    <label>Agent License No.</label>
+                                                    
+                                                    <asp:TextBox runat="server" CssClass="form-control" ID="reg_agent_license"></asp:TextBox>
+                                                </div><!-- /.form-group -->
+                                                
+
+                                                <div class="form-group">
+                                                    <asp:Button ID="agent_to_address" value="Next" runat="server" Text="Register" CssClass="btn btn-primary btn-inversed btn-block" OnClick="agent_to_address_Click"></asp:Button>
+                                                </div><!-- /.form-group -->
                                             </div>
 
-                                            <div class="form-group">
-                                                <asp:Button ID="sign_in_btn" runat="server" Text="Login" CssClass="btn btn-primary btn-inversed btn-block" ></asp:Button>
-                                            </div><!-- /.form-group -->
+
+
+
+
                                         </form>
                                     </div><!-- /.box -->
-                                </div>
+
+
+                                    </div>
                             </div><!-- /.row -->
                         </div><!-- /.block-content-inner -->
                     </div><!-- /.block-content -->
@@ -184,3 +174,4 @@
 
 </body>
 </html>
+

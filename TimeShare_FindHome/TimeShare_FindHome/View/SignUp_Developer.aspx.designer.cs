@@ -10,51 +10,42 @@
 namespace TimeShare_FindHome.View {
     
     
-    public partial class FrontEnd {
+    public partial class SignUp_Developer {
         
         /// <summary>
-        /// form1 control.
+        /// reg_company_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox reg_company_name;
         
         /// <summary>
-        /// HomePage control.
+        /// reg_company_license control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomePage;
+        protected global::System.Web.UI.WebControls.TextBox reg_company_license;
         
         /// <summary>
-        /// HomeSearchPage control.
+        /// reg_chairman control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomeSearchPage;
+        protected global::System.Web.UI.WebControls.TextBox reg_chairman;
         
         /// <summary>
-        /// HomeDetailPage control.
+        /// developer_to_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HomeDetailPage;
-        
-        /// <summary>
-        /// SignUpPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder SignUpPage;
+        protected global::System.Web.UI.WebControls.Button developer_to_address;
     }
 }
